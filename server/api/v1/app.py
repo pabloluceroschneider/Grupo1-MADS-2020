@@ -2,10 +2,15 @@ import sys
 sys.path.insert(1, './routes')
 from flask import Flask, jsonify
 from routes import routes
-app = Flask(__name__)
 PORT = 5000
+DEBUG = True
 
+# Inicializa el servidor
+app = Flask(__name__)
+
+# Instancia las rutas
 routes(app)
 
 if (__name__) == '__main__':
-    app.run(debug=True,port=PORT)
+    # Ejecuta servidor
+    app.run(debug=DEBUG,port=PORT)
