@@ -10,6 +10,7 @@ cd api/v1/
 start cmd /C python app.py
 
 cd ../../../
+call cls
 call code .
 
 cd client
