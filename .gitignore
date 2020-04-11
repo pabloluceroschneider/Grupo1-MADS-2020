@@ -4,6 +4,7 @@
 client/node_modules
 client/node_modules/.bin
 client/package-lock.json
+server/venv
 /.pnp
 .pnp.js
 __pycache__
