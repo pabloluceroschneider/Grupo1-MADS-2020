@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+//Pagina inicio...
+
 function App() {
   useEffect( ()=>{
     fetch('/hello').then( res => {
