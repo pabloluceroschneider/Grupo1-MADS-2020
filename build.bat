@@ -7,10 +7,10 @@ cd ../server
 IF NOT EXIST venv( call py -3 -m venv venv  && call venv\Scripts\activate  && call pip install Flask)
     
 cd api/v1/
-start cmd /K python app.py
+start cmd /C python app.py
 
-cd ../../../client
-start cmd /K npm start
-
-cd ..
+cd ../../../
 call code .
+
+cd client
+call npm start
