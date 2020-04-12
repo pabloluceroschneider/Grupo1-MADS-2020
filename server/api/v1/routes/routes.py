@@ -1,4 +1,4 @@
-import flask
+from flask import Flask, jsonify
 
 def routes(app):    
     #INDEX
@@ -6,3 +6,6 @@ def routes(app):
     def ping():
         return "INDEX"
 
+    @app.route('/hello')
+    def hello():
+        return jsonify([{"data":"hello ever"}])
