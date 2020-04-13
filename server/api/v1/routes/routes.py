@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
 
-def routes(app):    
+def routes(app, mysql):    
     #INDEX
     @app.route('/')
     def ping():
@@ -8,4 +8,7 @@ def routes(app):
 
     @app.route('/hello')
     def hello():
-        return jsonify([{"data":"hello ever"}])
+        cur = mysql.connection.cursor()
+        cur.execute('CALL LISTAR_PUBLICACIONES')
+        data = cur.fetchall()
+        return jsonify({"data":data})
