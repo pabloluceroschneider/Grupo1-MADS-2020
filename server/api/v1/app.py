@@ -1,5 +1,6 @@
 import sys
 sys.path.insert(1, './routes')
+sys.path.insert(1, './controllers')
 from flask import Flask, jsonify
 from flask_mysqldb import MySQL
 from routes import routes
