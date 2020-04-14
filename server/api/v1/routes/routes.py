@@ -2,13 +2,13 @@ from flask import Flask, jsonify
 import json
 
 class Publicacion:
-    def __init__(self, data):
-        self.id = data[0]
-        self.location = data[1]
-        self.roomApartment = data[2]
-        self.price = data[3]
-        self.owner = data[4]
-        self.datePublished = data[5]
+    def __init__(self, id, location, roomApartment, price, owner, datePublished):
+        self.id : int = id
+        self.location : str = location
+        self.roomApartment : str = roomApartment
+        self.price : float = price
+        self.owner : str = owner
+        self.datePublished : str = datePublished
     
     def tojson(self):
         json = { 
@@ -35,6 +35,7 @@ def routes(app, mysql):
         data = cur.fetchall()
         response = []
         for register in data:
-            obj = Publicacion(register).tojson()
+            id, location, roomApartment, price, owner, datePublished = register
+            obj = Publicacion(id, location, roomApartment, price, owner, datePublished).tojson()
             response.append(obj)
         return jsonify({ "data" : response })
