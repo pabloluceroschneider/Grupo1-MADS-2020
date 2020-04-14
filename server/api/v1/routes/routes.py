@@ -1,11 +1,5 @@
 from flask import Flask, jsonify
-import json
 from controllers import PublicacionCtrl
-
-
-
-
-
 
 def routes(app, mysql):    
     #INDEX
