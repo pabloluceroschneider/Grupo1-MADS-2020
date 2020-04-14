@@ -2,7 +2,7 @@ import sys
 sys.path.insert(1, './routes')
 sys.path.insert(2, './controllers')
 sys.path.insert(3, './models')
-from flask import Flask, jsonify
+from flask import Flask
 from flask_mysqldb import MySQL
 from routes import routes
 PORT = 5000

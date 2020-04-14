@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import jsonify
 from models import Publicacion
 
 def get(mysql):

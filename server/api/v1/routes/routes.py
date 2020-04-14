@@ -1,4 +1,3 @@
-from flask import Flask, jsonify
 from controllers import PublicacionCtrl
 
 def routes(app, mysql):    
