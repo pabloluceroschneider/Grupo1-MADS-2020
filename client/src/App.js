@@ -29,6 +29,10 @@ function App() {
           Learn React
         </a>
       </header>
+      <button class="ui basic button">
+        <i class="icon user"></i>
+          Add Friend
+      </button>
     </div>
   );
 }
