@@ -1,0 +1,28 @@
+{
+   "properties": [
+        {
+            "datePublished": "Sun, 12 Apr 2020 21:48:43 GMT",
+            "id": 1,
+            "location":"Zona Nueva Cordoba",
+            "owner":"Own",
+            "price":13500,
+            "roomApartment":1
+        },
+        {
+            "datePublished": "Mon, 13 Apr 2020 22:38:43 GMT",
+            "id": 2,
+            "location":"Zona General Paz",
+            "owner":"Inmb",
+            "price":10500,
+            "roomApartment":1
+        },
+        {
+            "datePublished": "Tue, 14 Apr 2020 22:38:43 GMT",
+            "id": 3,
+            "location":"Zona Nueva Cordoba",
+            "owner":"Own",
+            "price":20500,
+            "roomApartment":3
+        }
+    ]
+}
