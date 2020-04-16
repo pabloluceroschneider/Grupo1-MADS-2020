@@ -1,19 +1,19 @@
 import sys
-sys.path.insert(1, './routes')
-sys.path.insert(2, './controllers')
-sys.path.insert(3, './models')
+sys.path.insert(1, './common')
+sys.path.insert(2, './routes')
+sys.path.insert(3, './controllers')
+sys.path.insert(4, './models')
 from flask import Flask
 from flask_mysqldb import MySQL
 from routes import routes
+from common import env
 PORT = 5000
 DEBUG = True
 
 # Inicializa el servidor
 app = Flask(__name__)
-app.config['MYSQL_HOST']        = 'localhost'
-app.config['MYSQL_USER']        = 'root'
-app.config['MYSQL_PASSWORD']    = 'gD*1d+dvl'
-app.config['MYSQL_DB']          = 'mads'
+app = env.config(app)
+
 
 mysql = MySQL(app)
 
