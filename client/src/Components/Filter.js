@@ -9,7 +9,7 @@ const InputCheck = props => {
         <>
         <input  type="radio" 
                 name="fruit" 
-                tabIndex={`${tabIndex}`} 
+                tabIndex={tabIndex} 
                 className="hidden" 
                 onClick={ ()=>{console.log(text)}}
             />
@@ -26,8 +26,8 @@ const Field = props => {
         <div className="field">
             <label>{label}</label>
             <div className="ui radio checkbox">
-            <InputCheck tabIndex={`${tabIndex}`} text={"Mayor a menor"} />               
-            <InputCheck tabIndex={`${tabIndex}`} text={"Menor a mayor"} />               
+            <InputCheck tabIndex={tabIndex} text={"Mayor a menor"} />               
+            <InputCheck tabIndex={tabIndex} text={"Menor a mayor"} />               
             </div>
         </div>
         </>
@@ -71,7 +71,7 @@ const Filter = () => {
   return (
     <>
       <Button onClick={() => onClickFilterButton()} positive={renderPanel} >
-        { renderPanel ? '' : <i class="filter icon"></i>}        
+        { renderPanel ? '' : <i className="filter icon"></i>}        
         { renderPanel ? 'Aplicar': 'Filtros'}
       </Button>
       {renderPanel ? <PanelFiltros /> : null}
