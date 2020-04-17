@@ -60,13 +60,16 @@ const PanelFiltros = () => {
 const Filter = () => {
   const [renderPanel, setRenderPanel] = useState(false);
 
+  const onClickFilterButton = () => {
+    if (renderPanel){
+      console.log("filtrar!")
+    }
+    setRenderPanel(!renderPanel);
+  }
+
   return (
     <>
-      <Button
-        onClick={() => {
-          setRenderPanel(!renderPanel);
-        }}
-      >
+      <Button onClick={() => onClickFilterButton() }>
         { renderPanel ? 'Aplicar': 'Filtros'}
       </Button>
       {renderPanel ? <PanelFiltros /> : null}
