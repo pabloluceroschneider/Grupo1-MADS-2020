@@ -1,22 +1,24 @@
-import React, {useEffect} from 'react';
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
 import './App.css';
-import { ListOwnership } from './Components/ListOwnership'
-import {Button} from 'semantic-ui-react'
+import Filter from './Components/Filter'
 //Pagina inicio...
 
 function App() {
-  useEffect( ()=>{
-    fetch('/publicaciones').then( res => {
+  const [ publicaciones, setPublicaciones ] = useState(null);
+
+  useEffect( () => {
+    let getdata = () => { fetch('/publicaciones').then( res => {
       res.json().then(data => {
         console.log(data);
+        return data;
       })
-    })
+    })}
+  setPublicaciones(getdata())
   },[]);
 
   return (
     <div className="App">
-        <ListOwnership/>
+        <Filter />
     </div>
   );
 }
