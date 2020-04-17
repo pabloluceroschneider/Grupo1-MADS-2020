@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { ListOwnership } from './Components/ListOwnership'
 import {Button} from 'semantic-ui-react'
 //Pagina inicio...
 
@@ -15,9 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <h2>Button</h2>
-      <button className="ui button">Click Here</button>
-
+        <ListOwnership/>
     </div>
   );
 }
