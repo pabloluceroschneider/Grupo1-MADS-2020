@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
+import {Home } from './pages/Home';
+
 import './App.css';
-import { Title } from './components/Title';
+
 
 
 //Pagina inicio...
@@ -9,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <Title>Co-Alquilando</Title>
+          <Home></Home>
       </div>
     );
   }
