@@ -8,7 +8,7 @@ const InputCheck = props => {
         <>
         <input  type="radio" 
                 name="fruit" 
-                tabIndex={`${tabindex}`} 
+                tabindex={`${tabindex}`} 
                 className="hidden" 
                 onClick={ ()=>{console.log(text)}}
             />
