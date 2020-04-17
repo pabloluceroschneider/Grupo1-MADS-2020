@@ -6,7 +6,7 @@ import './App.css';
 
 function App() {
   useEffect( ()=>{
-    fetch('/hello').then( res => {
+    fetch('/publicaciones').then( res => {
       res.json().then(data => {
         console.log(data);
       })
