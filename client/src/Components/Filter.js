@@ -1,65 +1,52 @@
 import React, { useState } from "react";
-import { Button, Checkbox } from "semantic-ui-react";
+import { Button, Form } from "semantic-ui-react";
 // use Filter.css
 
-const InputCheck = (props) => {
-  const { text, tabIndex, checked, setAsc } = props;
-  let boolean = tabIndex ? true : false;
+const Radios = props => {
+  const {label, asc, selected, setSelected, parent} = props;
+
+  const validateCheck = (parent, asc) => {
+    if (selected.filter === parent && selected.asc === asc){
+      return true
+    }
+    return false
+  }
+
+  const handleChange = (parent, asc) => {
+    setSelected( { "filter":parent, "asc":asc} )
+  }
 
   return (
-    <>
-      <Checkbox 
-          label={text}
-          tabIndex={tabIndex}
-          style={{display:'block'}}
-          checked={checked}
-          onChange={()=> setAsc(boolean)}
-        />
-
-    </>
-  );
-};
-
-const Field = (props) => {
-  const { label } = props;
-  const [asc, setAsc ] = useState(true)
-  return (
-    <>
-      <div className="field">
-        <label>{label}</label>
-        <div className="ui radio checkbox">
-          <InputCheck tabIndex={1} text={"Mayor a menor"} checked={asc} setAsc={setAsc}/>
-          <InputCheck tabIndex={0} text={"Menor a mayor"} checked={!asc} setAsc={setAsc}/>
-        </div>
-      </div>
-    </>
-  );
-};
-
-const GroupedFields = () => {
-  const filtros = [
-    "Precio",
-    "Fecha de publicación",
-    "Cantidad de habitaciones",
-  ];
-
-  return (
-    <div className="grouped fields">
-      {filtros.map((f, index) => {
-        return (
-          <Field className="grid-item" key={index} label={f} />
-        );
-      })}
+    <div>
+      <Form.Radio
+        label={label}
+        value={asc}
+        checked={ validateCheck(parent, asc)}
+        onChange={ () => handleChange(parent, asc)}
+      />
     </div>
   );
 };
 
 const PanelFiltros = () => {
+  const filtros = ["Precio", "Fecha de Publicacion","Cantidad de habitaciones"];
+  const [selected, setSelected] = useState({ "filter":"Precio", "asc":1});
+
   return (
     <>
-      <div className="ui form panelFilter">
-        <GroupedFields />
-      </div>
+      <Form.Group inline>
+        <div className="panelFilter">
+          {filtros.map((filterName, index) => {
+            return (
+              <div key={index} className="grid-item">
+                <label>{filterName}</label>
+                <Radios label="Mayor a menor" asc={1} selected={selected} setSelected={setSelected} parent={filterName}/>
+                <Radios label="Menor a mayor" asc={0} selected={selected} setSelected={setSelected} parent={filterName}/>
+              </div>
+            );
+          })}
+        </div>
+      </Form.Group>
     </>
   );
 };
