@@ -1,13 +1,25 @@
-from flask import Flask, jsonify
+import sys
+sys.path.insert(1, './common')
+sys.path.insert(2, './routes')
+sys.path.insert(3, './controllers')
+sys.path.insert(4, './models')
+from flask import Flask
+from flask_mysqldb import MySQL
+from routes import routes
+from common import env
+PORT = 5000
+DEBUG = True
+
+# Inicializa el servidor
 app = Flask(__name__)
+app = env.config(app)
 
-@app.route('/')
-def index():
-    return 'Index Page'
 
-@app.route('/hello')
-def hello():
-    return jsonify([{"data":"hello ever"}])
+mysql = MySQL(app)
+
+# Instancia las rutas
+routes(app, mysql)
 
 if (__name__) == '__main__':
-    app.run(debug=True,port=4000)
+    # Ejecuta servidor
+    app.run(debug=DEBUG,port=PORT)
