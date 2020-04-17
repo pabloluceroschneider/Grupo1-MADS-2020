@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "semantic-ui-react";
+// use Filter.css
 
 
 const InputCheck = props => {
@@ -34,13 +35,13 @@ const Field = props => {
 };
 
 const GroupedFields = () => {
-    const filtros = ['Precio','Fecha de publicación']
+    const filtros = ['Precio','Fecha de publicación', 'Cantidad de habitaciones']
 
   return (
     <div className="grouped fields">
         {filtros.map( (f, index) => {
             return (
-                <Field key={index} tabIndex={index} label={f} />
+                <Field className="grid-item" key={index} tabIndex={index} label={f} />
             )
         })}
     </div>
@@ -50,7 +51,7 @@ const GroupedFields = () => {
 const PanelFiltros = () => {
   return (
     <>
-      <div className="ui form">
+      <div className="ui form panelFilter">
         <GroupedFields />
       </div>
     </>
@@ -69,7 +70,8 @@ const Filter = () => {
 
   return (
     <>
-      <Button onClick={() => onClickFilterButton() }>
+      <Button onClick={() => onClickFilterButton()} positive={renderPanel} >
+        { renderPanel ? '' : <i class="filter icon"></i>}        
         { renderPanel ? 'Aplicar': 'Filtros'}
       </Button>
       {renderPanel ? <PanelFiltros /> : null}

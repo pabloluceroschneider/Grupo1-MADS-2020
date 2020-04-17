@@ -1,0 +1,20 @@
+.panelFilter{
+    background: rgb(235, 233, 233);
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 1em 8em 0em 8em;
+    padding: 1em;
+}
+
+.grid-item{
+    grid: auto;
+}
+
+
+@media (max-width: 600px) {
+    .panelFilter{
+        grid-template-columns: auto;
+        margin: 2px 2px 2px 2px;
+    }
+    
+  }
