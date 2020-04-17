@@ -3,12 +3,12 @@ import { Button } from "semantic-ui-react";
 
 
 const InputCheck = props => {
-    const {text, tabindex} = props;
+    const {text, tabIndex} = props;
     return (
         <>
         <input  type="radio" 
                 name="fruit" 
-                tabIndex={`${tabindex}`} 
+                tabIndex={`${tabIndex}`} 
                 className="hidden" 
                 onClick={ ()=>{console.log(text)}}
             />
@@ -19,14 +19,14 @@ const InputCheck = props => {
 }
 
 const Field = props => {
-    const {label, tabindex} = props;
+    const {label, tabIndex} = props;
     return (
         <>
         <div className="field">
             <label>{label}</label>
             <div className="ui radio checkbox">
-            <InputCheck tabindex={`${tabindex}`} text={"Mayor a menor"} />               
-            <InputCheck tabindex={`${tabindex}`} text={"Menor a mayor"} />               
+            <InputCheck tabIndex={`${tabIndex}`} text={"Mayor a menor"} />               
+            <InputCheck tabIndex={`${tabIndex}`} text={"Menor a mayor"} />               
             </div>
         </div>
         </>
@@ -40,7 +40,7 @@ const GroupedFields = () => {
     <div className="grouped fields">
         {filtros.map( (f, index) => {
             return (
-                <Field key={index} tabindex={index} label={f} />
+                <Field key={index} tabIndex={index} label={f} />
             )
         })}
     </div>
