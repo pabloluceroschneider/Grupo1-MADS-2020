@@ -39,7 +39,7 @@ const PanelFiltros = () => {
           {filtros.map((filterName, index) => {
             return (
               <div key={index} className="grid-item">
-                <label>{filterName}</label>
+                <label className="filterName">{filterName}</label>
                 <Radios label="Mayor a menor" asc={1} selected={selected} setSelected={setSelected} parent={filterName}/>
                 <Radios label="Menor a mayor" asc={0} selected={selected} setSelected={setSelected} parent={filterName}/>
               </div>

@@ -11,6 +11,9 @@
     grid: auto;
 }
 
+.filterName{
+    font-weight: bold;
+}
 
 @media (max-width: 800px) {
     .panelFilter{
