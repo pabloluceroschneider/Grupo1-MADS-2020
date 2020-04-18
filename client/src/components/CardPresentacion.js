@@ -11,11 +11,9 @@ export class CardPresentacion extends Component{
 
     render(){
         const { title, description, imagen, pagina, handlerPage } = this.props
-        console.log('-> render card');
-        
-        // () => handlerPage(pagina)
+
         return (
-            <div className="ui card"  >
+            <div className="ui card">
                 <a className="image" >
                     <img src={imagen} alt={title} onClick = {() => handlerPage(pagina)}></img>
                 </a>
