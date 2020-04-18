@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import {BarraMenu} from '../components/BarraMenu'
-import {Title} from '../components/Title'
-import { PresentationList } from '../components/PresentationList'
-import { TabInformativo } from '../components/TabInformativo'
-import { Footer } from '../components/Footer'
+import {BarraMenu} from '../components/home/BarraMenu'
+import {Title} from '../components/home/Title'
+import { PresentationList } from '../components/home/PresentationList'
+import { TabInformativo } from '../components/home/TabInformativo'
+import { Footer } from '../components/home/Footer'
 
 
 export class Home extends Component {
