@@ -1,36 +1,26 @@
-import React, {useEffect} from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import {Home } from './pages/Home';
+
 import './App.css';
 
 //Pagina inicio...
 
-function App() {
-  useEffect( ()=>{
-    fetch('/publicaciones').then( res => {
-      res.json().then(data => {
-        console.log(data);
-      })
-    })
-  },[]);
+class App extends Component {
+  state = { page: 'Home' }
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  _handlerPage = (e) => {
+    this.setState({page: e})
+  }
+
+  render() {
+    const Pages = this.state.page === 'Home' ? <Home handlerPage={this._handlerPage}></Home> : null
+
+    return (
+      <div className="App">
+          {Pages}
+      </div>
+    );
+  }
 }
 
 export default App;
