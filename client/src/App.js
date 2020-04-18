@@ -5,7 +5,13 @@ import {Button} from 'semantic-ui-react'
 //Pagina inicio...
 
 class App extends Component {
- 
+ // useEffect( ()=>{
+ //   fetch('/publicaciones').then( res => {
+ //     res.json().then(data => {
+ //       console.log(data);
+ //     })
+ //   })
+ // },[]);
  render(){
   return (
     <div className="App">
