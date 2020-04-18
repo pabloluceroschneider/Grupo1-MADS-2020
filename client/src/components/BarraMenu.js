@@ -7,7 +7,7 @@ export class BarraMenu extends Component {
         return (
             <div className="ui large top fixed pointed borderless menu">
             <div className="ui container">
-              <a className="active item"><i class="home icon"></i></a>
+              <a className="active item"><i className="home icon"></i></a>
               <a className="item">Home</a>
               <BuscadorPropiedad></BuscadorPropiedad>
               <div className="right menu">

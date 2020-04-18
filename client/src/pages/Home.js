@@ -12,7 +12,7 @@ export class Home extends Component {
             <div>
                <BarraMenu></BarraMenu>
                <Title>Co-Alquilando</Title>
-               <PresentationList></PresentationList>
+               <PresentationList handlerPage={this.props.handlerPage}></PresentationList>
                <h1 style={{marginTop: 0}}>¿Cómo Funciona?</h1>
                <TabInformativo></TabInformativo>
                <br></br>

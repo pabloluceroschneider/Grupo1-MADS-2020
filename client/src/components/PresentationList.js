@@ -16,7 +16,7 @@ export class PresentationList extends Component {
                 <CardPresentacion  title='Buscar Compañero y Propiedad' description='Busca compañeros y propiedades para compartir' imagen='https://blog.nexoinmobiliario.pe/wp-content/uploads/2019/05/Roommates.jpg'></CardPresentacion>
                 </div>
                 <div className='CardPresentacionIzq'>
-                <CardPresentacion  title='Buscar Propiedad' description='Busca la propiedad que mejor se adapte a ti' imagen='https://imgar.zonapropcdn.com/avisos/1/00/45/59/55/84/720x532/1716688221.jpg'></CardPresentacion>
+                <CardPresentacion handlerPage={this.props.handlerPage} pagina='ListaPropiedades' title='Buscar Propiedad' description='Busca la propiedad que mejor se adapte a ti' imagen='https://imgar.zonapropcdn.com/avisos/1/00/45/59/55/84/720x532/1716688221.jpg'></CardPresentacion>
                 </div>
             </div>
         )
