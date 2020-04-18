@@ -8,9 +8,12 @@ const imagenes = ["https://imgar.zonapropcdn.com/avisos/resize/1/00/45/59/55/84/
 export class Ownership extends Component{
 
     render(){
-        const {dtp, id, loc, own, price, roomAp, image} = this.props
+        const {dtp, id, loc, price, roomAp} = this.props
         return(
-
+                // Componente Card tiene dos contenidos grandes. Content y extra content.
+                //Columna Imgen tiene la imagen. la imagen la traigo del array imagenes con su fuente
+                //Columna Contenido e imagen en la misma fila dentro de content esta la col contenido (Titulo, tag, Descripcion, metadatos y date)
+                //Prop dtp: DatePublished, id: id, loc: location, price: price, roomAp: RoomApartment
                 <div className="ui card" >
                   <div className="content">
                     <Grid columns={2} divided>
