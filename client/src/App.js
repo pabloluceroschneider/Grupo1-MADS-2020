@@ -1,26 +1,23 @@
-import React, {useState, useEffect} from 'react';
-import './App.css';
-import Filter from './Components/Filter'
-//Pagina inicio...
+import React, { Component } from 'react';
+import { Home } from './pages/Home';
+import Filter from './components/Filter';
 
-function App() {
-  const [ publicaciones, setPublicaciones ] = useState(null);
+class App extends Component {
+  state = { page: 'Home' }
 
-  useEffect( () => {
-    let getdata = () => { fetch('/publicaciones').then( res => {
-      res.json().then(data => {
-        console.log(data);
-        return data;
-      })
-    })}
-  setPublicaciones(getdata())
-  },[]);
+  _handlerPage = (e) => {
+    this.setState({page: e})
+  }
 
-  return (
-    <div className="App">
-        <Filter />
-    </div>
-  );
+  render() {
+    const Pages = this.state.page === 'Home' ? <Home handlerPage={this._handlerPage}></Home> : <Filter />
+
+    return (
+      <div className="App">
+          {Pages}
+      </div>
+    );
+  }
 }
 
 export default App;
