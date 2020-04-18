@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Ownership} from './Ownership'
-
+import Filter from './Filter'
 
 export class ListOwnership extends Component{
  state={ownship: []}
@@ -22,6 +22,9 @@ export class ListOwnership extends Component{
         const {ownship} = this.state
         return (
             <div>
+                <div>
+                    <Filter/>
+                </div>
                 <h1 style={{textAlign:"left" ,padding:"15px"}}>Listado de Propiedades</h1>
                 {ownship.map(prop =>{
                     return(

@@ -1,5 +1,5 @@
-.ui.card:last-child {
-    width: 100%;
+.ownership > .ui.card.ownership:last-child {
+    width: 85%;
     min-width: 473px;
     min-height: 322px;
 }
@@ -14,8 +14,8 @@
     padding-bottom: 15px;
 }
 
-.descripcion{
-    text-align: left;
+.column.columnaContenido >.descripcion{
+    text-align-last: left;
 }
 .date{
     position:absolute;
@@ -48,7 +48,7 @@
     text-align: left;
 } */
 @supports(object-fit: cover){
-    .image{
+    .column.columnaImagen > .image{
       height: 100%;
       width: 625px;
       object-fit: cover;

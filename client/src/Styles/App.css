@@ -1,0 +1,66 @@
+.App {
+  text-align: center;
+}
+
+.Title {
+  margin-top: 60px;
+}
+
+.PresentationalList{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  display: flex;
+}
+
+.CardPresentacionDer {
+  margin-bottom: 2%;
+  margin-right: 1%;
+  width: 48%;
+  text-align: -webkit-right;
+}
+
+.content {
+  text-align-last: center;
+}
+
+.CardPresentacionIzq {
+  margin-bottom: 2%;
+  width: 48%;
+  text-align: -webkit-left;
+}
+
+.ui.card:last-child {
+  margin-bottom: 0;
+  width: 70%;
+}
+
+.ui.card, .ui.cards>.card {
+  max-width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  height: 100%;
+  min-height: 0;
+  background: #fff;
+  padding: 0;
+  border: none;
+  border-radius: .28571429rem;
+  box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+  transition: box-shadow .1s ease,transform .1s ease;
+  z-index: '';
+}
+
+.ui.secondary.pointing.menu {
+  justify-content: center;
+  margin-left: 0;
+  margin-right: 0;
+  border-bottom: 2px solid rgba(34,36,38,.15);
+}
+
+.Footer {
+  position: fixed;
+}
+

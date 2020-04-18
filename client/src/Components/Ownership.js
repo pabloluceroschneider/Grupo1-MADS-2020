@@ -14,7 +14,9 @@ export class Ownership extends Component{
                 //Columna Imgen tiene la imagen. la imagen la traigo del array imagenes con su fuente
                 //Columna Contenido e imagen en la misma fila dentro de content esta la col contenido (Titulo, tag, Descripcion, metadatos y date)
                 //Prop dtp: DatePublished, id: id, loc: location, price: price, roomAp: RoomApartment
-                <div className="ui card" >
+            <div className="ownership">
+               
+                <div className="ui card ownership" >
                   <div className="content">
                     <Grid columns={2} divided>
                         <Grid.Row>
@@ -48,11 +50,12 @@ export class Ownership extends Component{
                     </Grid>
                   </div>
                   <div className="extra content">
-                    <button class=" fluid positive ui button " style={{paddingRight:"2px"}}>Ver propiedad  
+                    <button className=" fluid positive ui button " style={{paddingRight:"2px"}}>Ver propiedad  
                         <Icon style={{paddingLeft:"7px"}} color="black" name="home"/>
                     </button>
                   </div>
                 </div>
+            </div>
             
         )
     }

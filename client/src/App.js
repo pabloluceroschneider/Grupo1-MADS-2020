@@ -1,25 +1,24 @@
-import React, {Component} from 'react';
-import './App.css';
-import { ListOwnership } from './components/ListOwnership'
-
-//Pagina inicio...
-
+import React, { Component } from 'react';
+import { Home } from './pages/Home';
+import {ListOwnership} from './components/ListOwnership'
 class App extends Component {
- // useEffect( ()=>{
- //   fetch('/publicaciones').then( res => {
- //     res.json().then(data => {
- //       console.log(data);
- //     })
- //   })
- // },[]);
- render(){
-  return (
-    <div className="App">
-        <ListOwnership/>
-    </div>
-  );
+  state = { page: 'Home' }
+
+  _handlerPage = (e) => {
+    this.setState({page: e})
+  }
+
+  render() {
+    const Pages = this.state.page === 'Home' ? <Home handlerPage={this._handlerPage}></Home> : <ListOwnership />
+
+    return (
+      <div className="App">
+          {Pages}
+      </div>
+    );
+  }
 }
-}
+
 
  
 
