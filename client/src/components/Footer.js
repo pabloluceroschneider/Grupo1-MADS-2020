@@ -25,8 +25,8 @@ export class Footer extends Component {
                   </div>
                 </div>
                 <div className="seven wide column">
-                  <h4 className="ui inverted header">Footer Header</h4>
-                  <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+                  <h3 className="ui inverted header">MADS - 2020</h3>
+                  <h4>Conti - Lucero - Peralta</h4>
                 </div>
               </div>
             </div>
