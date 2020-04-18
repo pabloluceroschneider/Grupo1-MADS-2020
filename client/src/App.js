@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
-import { ListOwnership } from './Components/ListOwnership'
-import {Button} from 'semantic-ui-react'
+import { ListOwnership } from './components/ListOwnership'
+
 //Pagina inicio...
 
 class App extends Component {
