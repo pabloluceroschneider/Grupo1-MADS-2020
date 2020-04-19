@@ -1,3 +1,27 @@
+
+
+.render.ListOwnerShip > .titleRow{
+    display: grid;
+    grid-template-areas: 'one two' 'three three';
+    margin-top: 25px !important;
+}
+
+.titleRow > title {
+    grid-area: one;
+    text-align:"left";
+    padding:15px;
+}
+
+.titleRow > .filterComponent {
+    grid-area: two;
+}
+
+.inline.fields > .panelFilter{
+    grid-area: three;
+    margin: 0px 0px 0.5em 0px;
+
+}
+
 .tarjetaProp {
     padding-left: 15px;
     padding-bottom: 15px ;
