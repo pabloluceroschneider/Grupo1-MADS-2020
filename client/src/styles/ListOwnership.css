@@ -18,7 +18,8 @@
 
 .inline.fields > .panelFilter{
     grid-area: three;
-    margin: 0px 0px 0.5em 0px;
+    margin: 0% 0% 1% 8.5%;
+    width:83%;
 
 }
 
