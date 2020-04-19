@@ -27,8 +27,8 @@ export class Ownership extends Component{
                                 <div className="titulo">
                                     <h1>Apartamento {id}</h1>
                                     <div className="tag">
-                                        <Label as='a' color={id %2 == 0 ? 'red' : 'blue'} tag>
-                                            {id %2 == 0 ? 'Inmobiliaria' : 'Dueño'}
+                                        <Label as='a' color={id %2 === 0 ? 'red' : 'blue'} tag>
+                                            {id %2 === 0 ? 'Inmobiliaria' : 'Dueño'}
                                         </Label>
                                     </div>
                                 </div>

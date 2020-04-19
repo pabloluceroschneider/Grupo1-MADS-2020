@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Form } from "semantic-ui-react";
+import { Form } from "semantic-ui-react";
 // use Filter.css
 
 const Radios = props => {
