@@ -3,7 +3,6 @@
     display: grid;
     grid-template-columns: auto auto auto;
     grid-row-gap: 1.5em;
-    margin: 1em 8em 0em 8em;
     padding: 1em;
 }
 
@@ -18,7 +17,6 @@
 @media (max-width: 800px) {
     .panelFilter{
         grid-template-columns: auto auto;
-        margin: 0.2em 0.2em 0.2em 0.2em;
     }
 }
 

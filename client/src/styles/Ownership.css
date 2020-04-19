@@ -1,0 +1,61 @@
+.ownership > .ui.card.ownership:last-child {
+    width: 85%;
+    min-width: 473px;
+    min-height: 322px;
+}
+
+.metadatos{
+    position:absolute;
+    bottom: 20px;
+    display: flex;
+}
+.titulo{
+    text-align: left;
+    padding-bottom: 15px;
+}
+
+.column.columnaContenido >.descripcion{
+    text-align-last: left;
+}
+.date{
+    position:absolute;
+    bottom: 0px;
+    right: 0px;
+    color: grey;
+}
+
+.titulo{
+    display: flex;
+}
+.tag{
+    position: absolute;
+    right: 0px;
+    min-width: 115px;
+}
+
+
+.row{
+    height: 200px;
+    min-width: 450px;
+    min-height: 280px;
+}
+.colum{
+    max-height: 250px;
+    min-width: 225px;
+    min-height: 255px;
+}
+/* .columnaContenido{
+    text-align: left;
+} */
+@supports(object-fit: cover){
+    .column.columnaImagen > .image{
+      height: 100%;
+      width: 625px;
+      object-fit: cover;
+      object-position: center center;
+      max-height: 250px;
+      justify-content: center;
+      min-width: 200px;
+      min-height: 180px;
+    }
+    }

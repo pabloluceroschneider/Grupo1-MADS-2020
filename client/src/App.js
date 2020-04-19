@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Home } from './pages/Home';
-import Filter from './components/Filter';
-
+import {ListOwnership} from './components/ListOwnership'
 class App extends Component {
   state = { page: 'Home' }
 
@@ -10,7 +9,7 @@ class App extends Component {
   }
 
   render() {
-    const Pages = this.state.page === 'Home' ? <Home handlerPage={this._handlerPage}></Home> : <Filter />
+    const Pages = this.state.page === 'Home' ? <Home handlerPage={this._handlerPage}></Home> : <ListOwnership />
 
     return (
       <div className="App">
@@ -19,5 +18,8 @@ class App extends Component {
     );
   }
 }
+
+
+ 
 
 export default App;

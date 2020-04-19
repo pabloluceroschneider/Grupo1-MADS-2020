@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Form } from "semantic-ui-react";
+import { Form } from "semantic-ui-react";
 // use Filter.css
 
 const Radios = props => {
@@ -52,22 +52,10 @@ const PanelFiltros = () => {
 };
 
 const Filter = () => {
-  const [renderPanel, setRenderPanel] = useState(false);
-
-  const onClickFilterButton = () => {
-    if (renderPanel) {
-      console.log("filtrar!");
-    }
-    setRenderPanel(!renderPanel);
-  };
 
   return (
     <>
-      <Button onClick={() => onClickFilterButton()} positive={renderPanel}>
-        {renderPanel ? "" : <i className="filter icon"></i>}
-        {renderPanel ? "Aplicar" : "Filtros"}
-      </Button>
-      {renderPanel ? <PanelFiltros /> : null}
+       <PanelFiltros />
     </>
   );
 };

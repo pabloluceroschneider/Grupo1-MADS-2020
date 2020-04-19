@@ -1,5 +1,7 @@
 @import "Filter.css"; 
 @import "App.css"; 
+@import './ListOwnership.css';
+@import './Ownership.css';
 
 body {
   margin: 0;
