@@ -9,7 +9,7 @@ export class ListOwnership extends Component {
   //Hago la llamada al servidor para solicitar las propiedades
   //Extraigo el objeto data de la respuesta y se lo asigno al objeto ownship del state
   componentDidMount() {
-    fetch("/publicaciones")
+    fetch("https://apicoalq.herokuapp.com/publicaciones")
       .then((res) => res.json())
       .then((respuesta) => {
         const { data } = respuesta;
@@ -37,6 +37,18 @@ export class ListOwnership extends Component {
   //Extraigo el Objeto ownship del state
   render() {
     const { ownship, renderFilter } = this.state;
+    console.log(ownship);
+    if (ownship.length === 0){
+      return(
+        <div>
+            
+              <div className="ui active inverted dimmer">
+                <div className="ui text loader"><h3>Caragando Propiedades...Espere por favor</h3></div>
+              </div>
+            
+        </div>
+      )
+    }
     return (
       <div className="render ListOwnerShip">
         <div className="titleRow">

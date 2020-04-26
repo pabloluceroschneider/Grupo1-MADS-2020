@@ -4,7 +4,10 @@ import {Grid, Icon, Label} from 'semantic-ui-react'
 
 const imagenes = ["https://imgar.zonapropcdn.com/avisos/resize/1/00/45/59/55/84/1200x1200/1716688221.jpg",
                   "https://imgar.zonapropcdn.com/avisos/resize/1/00/44/97/17/01/1200x1200/1704286302.jpg",
-                   "https://imgar.zonapropcdn.com/avisos/resize/1/00/44/90/38/04/1200x1200/1700036482.jpg"]
+                   "https://imgar.zonapropcdn.com/avisos/resize/1/00/44/90/38/04/1200x1200/1700036482.jpg",
+                    "https://imgar.zonapropcdn.com/avisos/resize/1/00/45/83/95/69/1200x1200/1719623196.jpg",
+                    "https://imgar.zonapropcdn.com/avisos/resize/1/00/45/82/90/81/1200x1200/1719325461.jpg",
+                   "https://imgar.zonapropcdn.com/avisos/resize/1/00/45/61/77/65/1200x1200/1714820015.jpg"]
 export class Ownership extends Component{
 
     render(){
