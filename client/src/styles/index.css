@@ -2,6 +2,7 @@
 @import "App.css"; 
 @import './ListOwnership.css';
 @import './Ownership.css';
+@import './loader.css';
 
 body {
   margin: 0;
