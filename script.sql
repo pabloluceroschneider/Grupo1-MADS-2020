@@ -264,6 +264,30 @@ UNLOCK TABLES;
 --
 -- Dumping routines for database 'mads'
 --
+/*!50003 DROP PROCEDURE IF EXISTS `LISTAR_PROPIEDADES` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LISTAR_PROPIEDADES`()
+BEGIN
+	SELECT P.ID, P.UBICACION, P.HABITACIONES, P.FECHAPUBLICACION, P.LATITUD, P.LONGITUD, A.DESCRIPCION, PxA.VALOR, IxP.id, I.URL
+	FROM PROPIEDADES P
+	INNER JOIN PROPIEDADESXAMENITIES PxA ON (P.id = PxA.idPROPIEDADES)
+	INNER JOIN AMENITIES A ON (PxA.idAMENITIES = A.ID)
+	INNER JOIN IMAGENESXPROPIEDAD IxP ON (P.ID = IxP.idPROPIEDADES)
+	INNER JOIN IMAGENES I ON (I.ID = IxP.idIMAGENES);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -274,4 +298,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-02 16:21:09
+-- Dump completed on 2020-05-02 16:47:51
