@@ -268,15 +268,15 @@ UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8 */ ;
-/*!50003 SET character_set_results = utf8 */ ;
-/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `LISTAR_PROPIEDADES`()
 BEGIN
-	SELECT P.ID, P.UBICACION, P.HABITACIONES, P.FECHAPUBLICACION, P.LATITUD, P.LONGITUD, A.DESCRIPCION, PxA.VALOR, IxP.id, I.URL
+	SELECT P.ID, P.UBICACION, P.HABITACIONES, P.FECHAPUBLICACION, P.LATITUD, P.LONGITUD, A.DESCRIPCION, PxA.VALOR, I.URL
 	FROM PROPIEDADES P
 	INNER JOIN PROPIEDADESXAMENITIES PxA ON (P.id = PxA.idPROPIEDADES)
 	INNER JOIN AMENITIES A ON (PxA.idAMENITIES = A.ID)
@@ -298,4 +298,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-02 16:47:51
+-- Dump completed on 2020-05-02 21:35:39
