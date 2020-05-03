@@ -14,8 +14,6 @@ export class Home extends Component {
                <Title>Co-Alquilando</Title>
                <PresentationList handlerPage={this.props.handlerPage}></PresentationList>
                <ListOwnership />
-               {/* <h1 className="textFilter">Filter</h1>
-               <h1>Listado de propiedades</h1> */}
                <h1 style={{marginTop: 0}}>¿Cómo Funciona?</h1>
                <TabInformativo></TabInformativo>
                <br></br>
