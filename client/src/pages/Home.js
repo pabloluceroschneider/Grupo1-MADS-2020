@@ -4,7 +4,7 @@ import { Title } from '../components/home/Title'
 import { PresentationList } from '../components/home/PresentationList'
 import { TabInformativo } from '../components/home/TabInformativo'
 import { Footer } from '../components/home/Footer'
-
+import { ListOwnership } from '../components/ListOwnership'
 
 export class Home extends Component {
     render(){
@@ -13,6 +13,9 @@ export class Home extends Component {
                <BarraMenu></BarraMenu>
                <Title>Co-Alquilando</Title>
                <PresentationList handlerPage={this.props.handlerPage}></PresentationList>
+               <ListOwnership />
+               {/* <h1 className="textFilter">Filter</h1>
+               <h1>Listado de propiedades</h1> */}
                <h1 style={{marginTop: 0}}>¿Cómo Funciona?</h1>
                <TabInformativo></TabInformativo>
                <br></br>
