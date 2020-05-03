@@ -14,9 +14,9 @@ export class CardPresentacion extends Component{
 
         return (
             <div className="ui card">
-                <a className="image" >
+                <div className="image" >
                     <img src={imagen} alt={title} onClick = {() => handlerPage(pagina)}></img>
-                </a>
+                </div>
                 <div className="content">
                     <p className="header" >{title}</p>
                     <div className="meta">
