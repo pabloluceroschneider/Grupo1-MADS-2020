@@ -27,9 +27,29 @@
     padding-left: 15px;
     padding-bottom: 15px ;
     padding-right: 15px;
-    min-width: 540;
-    min-height: 340;
+    padding-top: 15px;
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 100%;
+    background-color: coral;
     text-align: -webkit-center;
+}
+
+@media screen and (min-width:600px){
+    .tarjetaProp{
+        background-color: red;
+        border: solid 1px;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .tarjetaProp{
+        background-color: blue;
+        border: solid 1px;
+        width: 100%;
+
+    }
 }
 
 

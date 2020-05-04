@@ -12,8 +12,8 @@ class App extends Component {
   }
 
   render() {
-    const Pages = this.state.page === 'Home' ? <Home handlerPage={this._handlerPage}></Home> : <ListOwnership />
-
+    // const Pages = this.state.page === 'Home' ? <Home handlerPage={this._handlerPage}></Home> : <ListOwnership />
+    const Pages = <ListOwnership />
     return (
       <div className="App">
           {Pages}
