@@ -1,5 +1,5 @@
 class Propiedad:
-    def __init__(self, id, ubicacion, habitaciones, fechaPublicacion, lat, longitud, amenities, imagenes):
+    def __init__(self, id, ubicacion, habitaciones, fechaPublicacion, lat, longitud, amenities, imagenes, precios, usuario):
         self.id = id
         self.ubicacion = ubicacion
         self.habitaciones = habitaciones
@@ -8,6 +8,8 @@ class Propiedad:
         self.longitud = longitud
         self.amenities = amenities
         self.imagenes = imagenes
+        self.precios = precios
+        self.usuario = usuario
 
     
     def tojson(self):
@@ -19,6 +21,8 @@ class Propiedad:
             "lat": self.lat,
             "longitud": self.longitud,
             "amenities": self.amenities,
-            "imagenes": self.imagenes
+            "imagenes": self.imagenes,
+            "precios": self.precios,
+            "usuario": self.usuario
         } 
         return json
