@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import useFetch from "../util/useFetch";
+import { get } from "../util/api";
 import { Ownership } from "./Ownership";
 import { Button } from "semantic-ui-react";
 import Filter from "./Filter";
@@ -13,7 +13,7 @@ export class ListOwnership extends Component {
   }
 
   getPropiedades = async () => {
-    let data = await useFetch("/publicaciones");
+    let data = await get("/propiedades");
     this.setState({ ownship: data });
   };
 
@@ -43,7 +43,9 @@ export class ListOwnership extends Component {
           <div className="filterComponent">{this.filterBtn()}</div>
         </div>
         {renderFilter ? <Filter /> : null}
+        {/* {this.state.ownship} */}
         {ownship.map((prop) => {
+          console.log(prop);
           return (
             <div className="tarjetaProp" key={prop.id}>
               <Ownership
