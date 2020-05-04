@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Home } from './pages/Home';
-import {ListOwnership} from './components/ListOwnership'
+//import {ListOwnership} from './components/ListOwnership'
 
 document.title = "Co-alquilando"
 
