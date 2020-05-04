@@ -3,30 +3,32 @@ import { Form, Button } from "semantic-ui-react";
 // use Filter.css
 
 const InputRadio = props => {
-  const {label, id, value, setRequestBody, requestBody } = props
+  const {label, id, value, setFilterState, filterState } = props
 
   const toggleCheck = () => { 
-    if (requestBody[id] === value){
-      setRequestBody({...requestBody, [id]: null })
+    
+    if (filterState[id] === value){
+      setFilterState({...filterState, [id]: null })
     }else{
-      setRequestBody({...requestBody, [id]: value })
+      setFilterState({...filterState, [id]: value })
     }
 
     // Funcionalidad para el input "Todas", que togglea check de todas las amenities 
-    if ( id === "todas" ){
-      if (requestBody.wifi === 1){
-        setRequestBody({...requestBody, wifi: null, balcon:null, ascensor:null, cochera:null, asador:null, patio:null })
+    if ( id === "allAmenities" ){
+      if (filterState.allAmenities){
+        setFilterState({...filterState, allAmenities:null, wifi: null, balcon:null, ascensor:null, cochera:null, asador:null, patio:null })
       }else{
-        setRequestBody({...requestBody, wifi: 1, balcon:1, ascensor:1, cochera:1, asador:1, patio:1 })
+        setFilterState({...filterState, allAmenities:1, wifi: 1, balcon:1, ascensor:1, cochera:1, asador:1, patio:1 })
       }
     }
+
   }
 
   return (
     <div>
       <Form.Radio
         label={label}
-        checked={ requestBody[id] === value }
+        checked={ filterState[id] === value }
         onClick={ () => toggleCheck() }
       />
     </div>
@@ -34,7 +36,7 @@ const InputRadio = props => {
 };
 
 const Filtro = props => {
-  const { filter, index, setRequestBody, requestBody } = props;
+  const { filter, index, setFilterState, filterState } = props;
   return (
     <div key={index} className="grid-item">
       <label className="filterName">{filter.title}</label>
@@ -45,8 +47,8 @@ const Filtro = props => {
               label={f.label} 
               id={f.id} 
               value={f.value} 
-              setRequestBody={setRequestBody}
-              requestBody={requestBody}
+              setFilterState={setFilterState}
+              filterState={filterState}
               />
           </div>
         )
@@ -81,24 +83,25 @@ const PanelFiltros = () => {
         { "label":"Cochera","id":"cochera", "value":1 },
         { "label":"Asador","id":"asador", "value":1 },
         { "label":"Patio","id":"patio", "value":1 },
-        { "label":"Todas","id":"todas", "value":1 },
+        { "label":"Todas","id":"allAmenities", "value":1 },
       ]
     }
   ]
 
-  const [ requestBody, setRequestBody ] = useState({
+  const [ filterState, setFilterState ] = useState({
     "habitaciones": null,
     "contrato": null,
     "wifi": null,
     "ascensor": null,
     "cochera": null,
     "asador": null,
-    "patio": null
+    "patio": null,
+    "allAmenities": null,
   })
 
   return (
     <>
-      {console.log(requestBody)}
+      {console.log(filterState)}
       <Form.Group inline>
         <div className="panelFilter">
           {filtros.map( (filter, index) => {
@@ -107,8 +110,8 @@ const PanelFiltros = () => {
                 key={index} 
                 filter={filter} 
                 index={index} 
-                setRequestBody={setRequestBody}
-                requestBody={requestBody}
+                setFilterState={setFilterState}
+                filterState={filterState}
                 />              
             )
           })}
