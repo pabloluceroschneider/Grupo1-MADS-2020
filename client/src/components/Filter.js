@@ -5,18 +5,19 @@ import { Form, Button } from "semantic-ui-react";
 const InputRadio = props => {
   const {label, id, value, setRequestBody, requestBody } = props
 
-  const handleCheck = () => {
+  const toggleCheck = () => { 
+    if (requestBody[id] === value){
+      setRequestBody({...requestBody, [id]: null })
+    }else{
+      setRequestBody({...requestBody, [id]: value })
+    }
+
+    // Funcionalidad para el input "Todas", que togglea check de todas las amenities 
     if ( id === "todas" ){
       if (requestBody.wifi === 1){
         setRequestBody({...requestBody, wifi: null, balcon:null, ascensor:null, cochera:null, asador:null, patio:null })
       }else{
         setRequestBody({...requestBody, wifi: 1, balcon:1, ascensor:1, cochera:1, asador:1, patio:1 })
-      }
-    }else{
-      if (requestBody[id] === value){
-        setRequestBody({...requestBody, [id]: null })
-      }else{
-        setRequestBody({...requestBody, [id]: value })
       }
     }
   }
@@ -26,7 +27,7 @@ const InputRadio = props => {
       <Form.Radio
         label={label}
         checked={ requestBody[id] === value }
-        onClick={ () => handleCheck() }
+        onClick={ () => toggleCheck() }
       />
     </div>
   );
