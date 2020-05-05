@@ -21,26 +21,29 @@ export class Ownership extends Component{
             <div className="ownership">
                
                 <div className="ui card ownership" >
-                  <div className="content">
-                        <div className="columnaImagen" >
-                             <img className="image" src={imagenes[id-1]} alt={id}  />
-                        </div>
-                        <hr></hr>
-                        <div className="columnaContenido">
-                            <Content 
-                                id = {id}
-                                loc = {loc}
-                                roomAp = {roomAp}
-                                price = {price}
-                                dtp = {dtp}
-                                />
-                        </div>
-                  </div>
-                  <div className="extra content">
-                    <button className=" fluid positive ui button " style={{paddingRight:"2px"}}>Ver propiedad  
-                        <Icon style={{paddingLeft:"7px"}} color="black" name="home"/>
-                    </button>
-                  </div>
+                    <div className="complete">
+
+                      <div className="content">
+                            <div className="columnaImagen" >
+                                 <img className="image" src={imagenes[id-1]} alt={id}  />
+                            </div>
+                            <hr></hr>
+                            <div className="columnaContenido">
+                                <Content 
+                                    id = {id}
+                                    loc = {loc}
+                                    roomAp = {roomAp}
+                                    price = {price}
+                                    dtp = {dtp}
+                                    />
+                            </div>
+                      </div>
+                      <div className="extra content">
+                        <button className=" fluid positive ui button " style={{paddingRight:"2px"}}>Ver propiedad  
+                            <Icon style={{paddingLeft:"7px"}} color="black" name="home"/>
+                        </button>
+                      </div>
+                    </div>
                 </div>
             </div>
             

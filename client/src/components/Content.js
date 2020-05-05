@@ -18,19 +18,27 @@ export class Content extends Component{
                         </Label>
                     </div>
                 </div>
-                    <div className="descripcion">
-                        <h3><Icon name="map marker alternate"/>{loc}</h3>
-                        <h3>Ambientes: {roomAp}</h3>
-                                    
-                    </div>
-                    <div className="metadatos">
+                <div className="informacion">
+                    <div className="columna1">
+                            <div className="loc">
+                                <h3><Icon name="map marker alternate"/>{loc}</h3>
+                            </div>
+                            <div className="spacer"></div>
+                            <div className="amb">
+                                <h3 className="amb">Ambientes: {roomAp}</h3>                                    
+                            </div>
+                        
                         <div className="precio">
                             <h3>Precio: $ {price}</h3>
+                        </div>      
+                        <div className="date">
+                            <span>{dtp}</span>
                         </div>
                     </div>
-                    <div className="date">
-                            <span>{dtp}</span>
-                     </div>
+                    <div className="columna2">
+                        AMENITIES
+                    </div>
+                </div>
             </div>
         )
     }

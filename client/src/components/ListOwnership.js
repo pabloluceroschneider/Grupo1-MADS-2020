@@ -13,8 +13,8 @@ export class ListOwnership extends Component {
   }
 
   getPropiedades = async () => {
-    let data = await get("/propiedades");
-    this.setState({ ownship: data });
+    let data = await get("/publicaciones");
+    this.setState({ ownship: data.data });
   };
 
   onClickFilterButton() {

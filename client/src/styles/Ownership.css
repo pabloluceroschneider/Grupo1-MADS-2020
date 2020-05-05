@@ -1,5 +1,5 @@
 .ownership > .ui.card.ownership:last-child {
-    width: 100%;
+    width: 90%;
 }
 
 @supports(object-fit: cover){
@@ -14,6 +14,7 @@
 
 .columnaContenido{
     height: 200px;
+    
 }
 
 .columnaContenido > .contenido{
@@ -24,7 +25,9 @@
     position: relative;
     display: inline-flex;
     width: 100%;
+    margin-bottom: 10px;
 }
+
 
 .columnaContenido> .contenido >.titulo > .content-titulo{
     position: relative;
@@ -32,11 +35,79 @@
     margin:0px;
     text-align: left;
 }
+.columnaContenido> .contenido >.titulo > .content-titulo h1{
+    font-size: 27px;
+}
 .columnaContenido >.contenido > .titulo >.tag{
     position: absolute;
     right: 0px;
     transform: translateY(7px);
 }
+.columnaContenido > .contenido > .informacion{
+    height: 170px;
+    position: relative;
+}
+
+.columnaContenido > .contenido > .informacion > .columna1{
+    position: absolute;
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    left: 0px;
+}
+
+.columnaContenido > .contenido > .informacion > .columna2{
+    position: absolute;
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+}
+
+
+
+ .columnaContenido > .contenido > .informacion > .columna1 >.loc{
+    text-align-last: left;
+    margin-left: 2px;
+    
+    
+}
+
+.columnaContenido > .contenido > .informacion > .columna1 > .amb{
+    
+    text-align-last:left;
+    margin-left: 2px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.columnaContenido > .contenido > .informacion > .columna1 > .spacer{
+    position: absolute;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.columnaContenido > .contenido > .informacion > .columna1 > .precio{
+    position: relative;
+    width: 100%;
+    height: 20%;
+    margin-left: 2px;
+    
+
+}
+.columnaContenido > .contenido > .informacion > .columna1 > .precio h3{
+    position: absolute;
+    text-align: left;
+    transform: translateY(4px);   
+} 
+
+.columnaContenido > .contenido > .informacion > .columna1 > .date{
+    position: absolute;
+    bottom: 15px;
+    text-align: justify;
+    
+    
+} 
+
+
 /* .metadatos{
     position:absolute;
     bottom: 20px;
@@ -73,9 +144,156 @@
 } */
 
 @media screen and (min-width: 600px){
+    hr{
+        width: 1;
+        size: 500;
+        float: left;
+    }
+    .ownership > .ui.card.ownership:last-child {
+        width: 90%;
+        height: 250px;
+    }
+    .ownership > .ui.card.ownership:last-child > .complete {
+        height: 100%;
+    }
+
+    
+    .ownership > .ui.card.ownership:last-child > .complete >.content{
+        position: relative;
+        height: 80%;
+        width: 100%;
+    }
+
+    .ownership > .ui.card.ownership:last-child > .complete >.content > .columnaContenido{
+        position: absolute;
+        display: inline-block;
+        height: 100%;
+        width: 60%;
+        left: 40%;  
+    }
+    .ownership > .ui.card.ownership:last-child > .complete >.content >
+    .columnaContenido > .contenido > .informacion > .columna1 >.loc{
+        text-align-last: left;
+        text-align: -webkit-left;
+        margin-left: 2px;
+
+        
+        
+    }
+
+    .ownership > .ui.card.ownership:last-child > .complete >.content > .columnaContenido 
+    > .contenido > .informacion{
+        height: 153px;
+        
+        
+    }
+    .ownership > .ui.card.ownership:last-child >.complete>.content
+    > .columnaImagen {
+        position: absolute;
+        display: inline-block;
+        width: 40%;
+        height: 100%;
+        left: 0;
+        top: 5px;
+        
+    
+    }
+
+    @supports(object-fit: cover){
+        .ownership > .ui.card.ownership:last-child >.complete>.content
+    > .columnaImagen > .image{
+        
+          height: 95%;
+          width: 95%;
+          margin-right:5px ;
+          object-fit: cover;
+          object-position: center center;
+          justify-content: center;
+        }
+    }
+
+
+    .ownership > .ui.card.ownership:last-child > .complete >.extra.content{
+        padding-top: 5px;
+        height: 20%;
+
+    }
 
 }
 
 @media screen and (min-width: 768px){
+    hr{
+        width: 1;
+        size: 500;
+        float: left;
+    }
+    .ownership > .ui.card.ownership:last-child {
+        width: 90%;
+        height: 250px;
+    }
+    .ownership > .ui.card.ownership:last-child > .complete {
+        height: 100%;
+    }
+
+    
+    .ownership > .ui.card.ownership:last-child > .complete >.content{
+        position: relative;
+        height: 80%;
+        width: 100%;
+    }
+
+    .ownership > .ui.card.ownership:last-child > .complete >.content > .columnaContenido{
+        position: absolute;
+        display: inline-block;
+        height: 100%;
+        width: 70%;
+        left: 30%;  
+    }
+    .ownership > .ui.card.ownership:last-child > .complete >.content >
+    .columnaContenido > .contenido > .informacion > .columna1 >.loc{
+        text-align-last: left;
+        text-align: -webkit-left;
+        margin-left: 2px;
+
+        
+        
+    }
+
+    .ownership > .ui.card.ownership:last-child > .complete >.content > .columnaContenido 
+    > .contenido > .informacion{
+        height: 153px;
+        
+        
+    }
+    .ownership > .ui.card.ownership:last-child >.complete>.content
+    > .columnaImagen {
+        position: absolute;
+        display: inline-block;
+        width: 30%;
+        height: 100%;
+        left: 0;
+        top: 5px;
+    
+    }
+
+    @supports(object-fit: cover){
+        .ownership > .ui.card.ownership:last-child >.complete>.content
+    > .columnaImagen > .image{
+        
+          height: 95%;
+          width: 95%;
+          margin-right:5px ;
+          object-fit: cover;
+          object-position: center center;
+          justify-content: center;
+        }
+    }
+
+
+    .ownership > .ui.card.ownership:last-child > .complete >.extra.content{
+        padding-top: 5px;
+        height: 20%;
+
+    }
     
 }
