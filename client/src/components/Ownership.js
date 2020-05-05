@@ -12,7 +12,7 @@ const imagenes = ["https://imgar.zonapropcdn.com/avisos/resize/1/00/45/59/55/84/
 export class Ownership extends Component{
 
     render(){
-        const {dtp, id, loc, price, roomAp} = this.props
+        const {dtp, id, loc, price, roomAp, own, amen, image} = this.props
         return(
                 // Componente Card tiene dos contenidos grandes. Content y extra content.
                 //Columna Imgen tiene la imagen. la imagen la traigo del array imagenes con su fuente
@@ -25,7 +25,7 @@ export class Ownership extends Component{
 
                       <div className="content">
                             <div className="columnaImagen" >
-                                 <img className="image" src={imagenes[id-1]} alt={id}  />
+                                 <img className="image" src={image[0]} alt={id}  />
                             </div>
                             <hr></hr>
                             <div className="columnaContenido">
@@ -35,6 +35,8 @@ export class Ownership extends Component{
                                     roomAp = {roomAp}
                                     price = {price}
                                     dtp = {dtp}
+                                    own ={own['rol']}
+                                    amen = {amen}
                                     />
                             </div>
                       </div>

@@ -8,14 +8,15 @@ import Loader from "../util/Loader";
 export class ListOwnership extends Component {
   state = { ownship: null, renderFilter: false };
 
+  getPropiedades = async () => {
+    let data = await get("/propiedades");
+    this.setState({ ownship: data });
+  };
+
   componentDidMount() {
     this.getPropiedades();
   }
 
-  getPropiedades = async () => {
-    let data = await get("/publicaciones");
-    this.setState({ ownship: data.data });
-  };
 
   onClickFilterButton() {
     const { renderFilter } = this.state;
@@ -36,6 +37,7 @@ export class ListOwnership extends Component {
 
   renderOwnership = () => {
     const { ownship, renderFilter } = this.state;
+    console.log(ownship)
     return (
       <div className="render ListOwnerShip">
         <div className="titleRow">
@@ -49,12 +51,14 @@ export class ListOwnership extends Component {
           return (
             <div className="tarjetaProp" key={prop.id}>
               <Ownership
-                dtp={prop.datePublished}
+                dtp={prop.fechaPublicacion}
                 id={prop.id}
-                loc={prop.location}
-                own={prop.owner}
-                price={prop.price}
-                roomAp={prop.roomApartment}
+                loc={prop.ubicacion}
+                own={prop.usuario}
+                amen = {prop.amenities}
+                // price={prop.precios}
+                roomAp={prop.habitaciones}
+                image = {prop.imagenes}
               />
             </div>
           );

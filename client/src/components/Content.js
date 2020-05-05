@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import {Grid, Icon, Label} from 'semantic-ui-react'
+import {Amenities} from './Amenities'
 
 export class Content extends Component{
 
 
     render(){
-        const {dtp, id, loc, price, roomAp} = this.props
+        const {dtp, id, loc, price, roomAp, own, amen} = this.props
         return(
             <div className="contenido">
                 <div className="titulo">
@@ -13,8 +14,8 @@ export class Content extends Component{
                     <h1>Apartamento {id}</h1>
                     </div>
                     <div className="tag">
-                        <Label as='a' color={id %2 === 0 ? 'red' : 'blue'} tag>
-                            {id %2 === 0 ? 'Inmobiliaria' : 'Dueño'}
+                        <Label as='a' color={own === 1 ? 'blue' : 'red'} tag>
+                            {own === 1 ? 'Dueño' : 'Inmobiliaria'}
                         </Label>
                     </div>
                 </div>
@@ -36,7 +37,7 @@ export class Content extends Component{
                         </div>
                     </div>
                     <div className="columna2">
-                        AMENITIES
+                        <Amenities amenities = {amen} />
                     </div>
                 </div>
             </div>
