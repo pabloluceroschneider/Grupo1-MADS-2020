@@ -122,13 +122,14 @@ const PanelFiltros = () => {
 };
 
 export const ButtonFiltros = props => {
+  const { onFilter, renderFilter } = props;
   return (
     <Button
-    onClick={() => this.onClickFilterButton()}
-    positive={this.state.renderFilter}
+    onClick={() => onFilter()}
+    positive={renderFilter}
   >
-    {this.state.renderFilter ? "" : <i className="filter icon"></i>}
-    {this.state.renderFilter ? "Aplicar" : "Filtros"}
+    {renderFilter ? "" : <i className="filter icon"></i>}
+    {renderFilter ? "Aplicar" : "Filtros"}
   </Button>
   )
 }
