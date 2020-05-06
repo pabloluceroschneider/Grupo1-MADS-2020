@@ -19,7 +19,8 @@ export class ListOwnership extends Component {
 				"asador": null,
 				"patio": null,
 				"allAmenities": null
-			}	
+			},
+			filteredOwnship: null	
 		};
 
 	componentDidMount() {
@@ -33,7 +34,7 @@ export class ListOwnership extends Component {
 
 	filterPropiedades = callback => {
 		const { ownship, filters } = this.state;
-		this.setState({ ownship: callback(ownship, filters) })
+		this.setState({ filteredOwnship: callback(ownship, filters) })
 	};
     
     onClickFilter = () => {
@@ -42,10 +43,27 @@ export class ListOwnership extends Component {
 			this.filterPropiedades(filterPropiedades);
 		}
 		this.setState({ renderFilter: !renderFilter });
-    };
+	};C
+	
+	renderCards = data => {
+		return data.map((prop) => {
+			return (
+				<div className="tarjetaProp" key={prop.id}>
+					<Ownership
+						dtp={prop.datePublished}
+						id={prop.id}
+						loc={prop.location}
+						own={prop.owner}
+						price={prop.price}
+						roomAp={prop.habitaciones}
+					/>
+				</div>
+			);
+		})
+	}
 
 	renderOwnership = () => {
-		const { ownship, renderFilter } = this.state;
+		const { ownship, renderFilter, filteredOwnship } = this.state;
 		return (
 			<div className="render ListOwnerShip">
 				<div className="titleRow">
@@ -59,20 +77,7 @@ export class ListOwnership extends Component {
 				</div>
 				{console.log(ownship)}
 				{renderFilter ? <Filter filterState={this.state.filters} setFilterState={this.setState.bind(this)} /> : null}
-				{ownship.map((prop) => {
-					return (
-						<div className="tarjetaProp" key={prop.id}>
-							<Ownership
-								dtp={prop.datePublished}
-								id={prop.id}
-								loc={prop.location}
-								own={prop.owner}
-								price={prop.price}
-								roomAp={prop.roomApartment}
-							/>
-						</div>
-					);
-				})}
+				{ filteredOwnship ? this.renderCards(filteredOwnship) : this.renderCards(ownship) }
 			</div>
 		);
 	};
