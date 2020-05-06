@@ -1,12 +1,18 @@
 import React, { Component } from 'react'
 import {Grid, Icon, Label} from 'semantic-ui-react'
 import {Amenities} from './Amenities'
+import {Precio} from './Precio'
 
 export class Content extends Component{
 
 
     render(){
         const {dtp, id, loc, price, roomAp, own, amen} = this.props
+        function toDate(string){
+            var string_date = string;
+            var fecha = new Date(string_date);
+            return fecha.toLocaleDateString()
+        }
         return(
             <div className="contenido">
                 <div className="titulo">
@@ -30,10 +36,11 @@ export class Content extends Component{
                             </div>
                         
                         <div className="precio">
-                            <h3>Precio: $ {price}</h3>
+                            {/* <h3>Precio: $ {price}</h3> */}
+                            <Precio precios = {price}/>
                         </div>      
                         <div className="date">
-                            <span>{dtp}</span>
+                            <span style={{color:"grey"}}>Publicado {toDate(dtp)}</span>
                         </div>
                     </div>
                     <div className="columna2">
