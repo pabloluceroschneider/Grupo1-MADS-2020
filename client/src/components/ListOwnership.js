@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import useFetch from '../util/useFetch';
 import { Ownership } from './Ownership';
-import Filter, { ButtonFiltros } from './Filter';
+import Filter, { ButtonFiltros, filterPropiedades } from './Filter';
 import Loader from '../util/Loader';
 
 export class ListOwnership extends Component {
@@ -14,12 +14,20 @@ export class ListOwnership extends Component {
 	getPropiedades = async () => {
 		let data = await useFetch('/publicaciones');
 		this.setState({ ownship: data });
-    };
+	};
+	
+	filterPropiedades = callback => {
+		const { ownship } = this.state;
+		this.setState({ ownship: callback(ownship) })
+	};
     
     onClickFilter = () => {
-        const { renderFilter } = this.state;
-        this.setState({ renderFilter: !renderFilter })
-    }
+		const { renderFilter } = this.state;
+		if (renderFilter){
+			this.filterPropiedades(filterPropiedades);
+		}
+        this.setState({ renderFilter: !renderFilter });
+    };
 
 	renderOwnership = () => {
 		const { ownship, renderFilter } = this.state;

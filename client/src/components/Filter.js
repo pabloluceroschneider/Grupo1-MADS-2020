@@ -134,5 +134,11 @@ export const ButtonFiltros = props => {
   )
 }
 
+export const filterPropiedades = ownship => {
+  let data = [];
+  data = ownship.filter( p => p )
+  return data;
+}
+
 
 export default PanelFiltros
