@@ -66,8 +66,8 @@ const PanelFiltros = props => {
     {
       "title": "Tipo de Contrato",
       "filters":[
-        { "label":"Dueño Directo", "id":"contrato", "value": "propietario" },
-        { "label":"Inmobiliaria", "id":"contrato", "value": "inmobiliaria" },
+        { "label":"Dueño Directo", "id":"contrato", "value": "Propietario" },
+        { "label":"Inmobiliaria", "id":"contrato", "value": "Inmobiliaria" },
         { "label":"Dueño/Inmobiliaria", "id":"contrato", "value": "duenoinmobiliaria" }
       ]
     },{
@@ -128,12 +128,18 @@ export const ButtonFiltros = props => {
 
 export const filterPropiedades = ( ownship, filters ) => {
   let data = [];
-  if ( !filters.habitaciones && !filters.contrato ){ return ownship}
   data = ownship.filter( p => {
     if (
-      p.habitaciones === filters.habitaciones
+      p.habitaciones === filters.habitaciones &&
+      p.usuario.descripcion === filters.contrato 
+      // &&
+      // p.amenities === filters.habitaciones &&
+      // p.amenities === filters.habitaciones &&
+      // p.amenities === filters.habitaciones &&
+      // p.amenities === filters.habitaciones
     ){ return p }
   })
+  if ( data.length === 0 ){ return null}
   return data;
 }
 
