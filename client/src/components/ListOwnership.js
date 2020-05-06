@@ -5,7 +5,21 @@ import Filter, { ButtonFiltros, filterPropiedades } from './Filter';
 import Loader from '../util/Loader';
 
 export class ListOwnership extends Component {
-	state = { ownship: null, renderFilter: false };
+
+	state = { 
+			ownship: null, 
+			renderFilter: false,
+			filters: {
+				"habitaciones": null,
+				"contrato": null,
+				"wifi": null,
+				"ascensor": null,
+				"cochera": null,
+				"asador": null,
+				"patio": null,
+				"allAmenities": null
+			}	
+		};
 
 	componentDidMount() {
 		this.getPropiedades();
@@ -17,8 +31,8 @@ export class ListOwnership extends Component {
 	};
 	
 	filterPropiedades = callback => {
-		const { ownship } = this.state;
-		this.setState({ ownship: callback(ownship) })
+		const { ownship, filters } = this.state;
+		this.setState({ ownship: callback(ownship, filters) })
 	};
     
     onClickFilter = () => {
@@ -26,7 +40,7 @@ export class ListOwnership extends Component {
 		if (renderFilter){
 			this.filterPropiedades(filterPropiedades);
 		}
-        this.setState({ renderFilter: !renderFilter });
+		this.setState({ renderFilter: !renderFilter });
     };
 
 	renderOwnership = () => {
@@ -42,7 +56,8 @@ export class ListOwnership extends Component {
 						/>
 					</div>
 				</div>
-				{renderFilter ? <Filter /> : null}
+				{console.log(ownship)}
+				{renderFilter ? <Filter filterState={this.state.filters} setFilterState={this.setState.bind(this)} /> : null}
 				{ownship.map((prop) => {
 					return (
 						<div className="tarjetaProp" key={prop.id}>

@@ -7,18 +7,19 @@ const InputRadio = props => {
 
   const toggleCheck = () => { 
     
+    console.log(filterState[id]);
     if (filterState[id] === value){
-      setFilterState({...filterState, [id]: null })
+      setFilterState({ filters: {...filterState, [id]:null} })
     }else{
-      setFilterState({...filterState, [id]: value })
+      setFilterState({ filters: {...filterState, [id]:value} })
     }
 
     // Funcionalidad para el input "Todas", que togglea check de todas las amenities 
     if ( id === "allAmenities" ){
       if (filterState.allAmenities){
-        setFilterState({...filterState, allAmenities:null, wifi: null, balcon:null, ascensor:null, cochera:null, asador:null, patio:null })
+        setFilterState({ filters: {...filterState, allAmenities:null, wifi: null, balcon:null, ascensor:null, cochera:null, asador:null, patio:null }})
       }else{
-        setFilterState({...filterState, allAmenities:1, wifi: 1, balcon:1, ascensor:1, cochera:1, asador:1, patio:1 })
+        setFilterState({ filters: {...filterState, allAmenities:1, wifi: 1, balcon:1, ascensor:1, cochera:1, asador:1, patio:1 }})
       }
     }
 
@@ -58,7 +59,9 @@ const Filtro = props => {
 
 }
 
-const PanelFiltros = () => {
+const PanelFiltros = props => {
+  const { filterState, setFilterState } = props;
+
   const filtros = [
     {
       "title": "Tipo de Contrato",
@@ -87,17 +90,6 @@ const PanelFiltros = () => {
       ]
     }
   ]
-
-  const [ filterState, setFilterState ] = useState({
-    "habitaciones": null,
-    "contrato": null,
-    "wifi": null,
-    "ascensor": null,
-    "cochera": null,
-    "asador": null,
-    "patio": null,
-    "allAmenities": null,
-  })
 
   return (
     <>
@@ -134,9 +126,14 @@ export const ButtonFiltros = props => {
   )
 }
 
-export const filterPropiedades = ownship => {
+export const filterPropiedades = ( ownship, filters ) => {
   let data = [];
-  data = ownship.filter( p => p )
+  if ( !filters.habitaciones && !filters.contrato ){ return ownship}
+  data = ownship.filter( p => {
+    if (
+      p.roomApartment === filters.habitaciones
+    ){ return p }
+  })
   return data;
 }
 
