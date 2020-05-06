@@ -129,16 +129,15 @@ export const ButtonFiltros = props => {
 export const filterPropiedades = ( ownship, filters ) => {
   let data = [];
   data = ownship.filter( p => {
-    if (
-      p.habitaciones === filters.habitaciones 
-      // &&
-      // p.usuario.descripcion === filters.contrato 
-      // &&
-      // p.amenities === filters.habitaciones &&
-      // p.amenities === filters.habitaciones &&
-      // p.amenities === filters.habitaciones &&
-      // p.amenities === filters.habitaciones
-    ){ return p }
+    let flag = true;
+    if (filters.habitaciones){ 
+      if ( p.habitaciones !== filters.habitaciones ){ flag = false }
+    }
+    if (filters.contrato){ 
+      if ( p.usuario.descripcion !== filters.contrato ){ flag = false }
+    }
+
+    if (flag){ return p }
   })
   if ( data.length === 0 ){ return null}
   return data;
