@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Form, Button } from "semantic-ui-react";
 // use Filter.css
 
@@ -130,8 +130,9 @@ export const filterPropiedades = ( ownship, filters ) => {
   let data = [];
   data = ownship.filter( p => {
     if (
-      p.habitaciones === filters.habitaciones &&
-      p.usuario.descripcion === filters.contrato 
+      p.habitaciones === filters.habitaciones 
+      // &&
+      // p.usuario.descripcion === filters.contrato 
       // &&
       // p.amenities === filters.habitaciones &&
       // p.amenities === filters.habitaciones &&

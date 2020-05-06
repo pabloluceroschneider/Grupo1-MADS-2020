@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { get } from "../util/api";
 import { Ownership } from "./Ownership";
-import { Button } from "semantic-ui-react";
 import Filter, { ButtonFiltros, filterPropiedades } from "./Filter";
 import Loader from "../util/Loader";
 
