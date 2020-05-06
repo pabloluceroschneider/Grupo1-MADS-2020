@@ -131,7 +131,7 @@ export const filterPropiedades = ( ownship, filters ) => {
   if ( !filters.habitaciones && !filters.contrato ){ return ownship}
   data = ownship.filter( p => {
     if (
-      p.roomApartment === filters.habitaciones
+      p.habitaciones === filters.habitaciones
     ){ return p }
   })
   return data;
