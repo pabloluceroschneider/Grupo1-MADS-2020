@@ -19,7 +19,7 @@ const InputRadio = props => {
       if (filterState.allAmenities){
         setFilterState({ filters: {...filterState, allAmenities:null, wifi: null, balcon:null, ascensor:null, cochera:null, asador:null, patio:null }})
       }else{
-        setFilterState({ filters: {...filterState, allAmenities:1, wifi: 1, balcon:1, ascensor:1, cochera:1, asador:1, patio:1 }})
+        setFilterState({ filters: {...filterState, allAmenities: "1", wifi: "1", balcon: "1", ascensor: "1", cochera: "1", asador: "1", patio: "1" }})
       }
     }
 
@@ -80,13 +80,13 @@ const PanelFiltros = props => {
     },{
       "title": "Comodidades",
       "filters":[
-        { "label":"Wifi", "id":"wifi", "value":1 },
-        { "label":"Balcon","id":"balcon", "value":1 },
-        { "label":"Ascensor","id":"ascensor", "value":1 },
-        { "label":"Cochera","id":"cochera", "value":1 },
-        { "label":"Asador","id":"asador", "value":1 },
-        { "label":"Patio","id":"patio", "value":1 },
-        { "label":"Todas","id":"allAmenities", "value":1 },
+        { "label":"Wifi", "id":"wifi", "value":"1" },
+        { "label":"Balcon","id":"balcon", "value":"1" },
+        { "label":"Ascensor","id":"ascensor", "value":"1" },
+        { "label":"Cochera","id":"cochera", "value":"1" },
+        { "label":"Asador","id":"asador", "value":"1" },
+        { "label":"Patio","id":"patio", "value":"1" },
+        { "label":"Todas","id":"allAmenities", "value":"1" },
       ]
     }
   ]
@@ -136,10 +136,31 @@ export const filterPropiedades = ( ownship, filters ) => {
     if (filters.contrato){ 
       if ( p.usuario.descripcion !== filters.contrato ){ flag = false }
     }
+    if (filters.asador){
+      if ( p.amenities[0].valor !== filters.asador ){ flag = false }
+    }
+    if (filters.cochera){
+      if ( p.amenities[1].valor !== filters.cochera ){ flag = false }
+    }
+    if (filters.wifi){
+      if ( p.amenities[2].valor !== filters.wifi ){ flag = false }
+    }
+    if (filters.patio){
+      if ( p.amenities[3].valor !== filters.patio ){ flag = false }
+    }
+    if (filters.balcon){
+      if ( p.amenities[4].valor !== filters.balcon ){ flag = false }
+    }
+    if (filters.ascensor){
+      if ( p.amenities[5].valor !== filters.ascensor ){ flag = false }
+    }
 
     if (flag){ return p }
   })
-  if ( data.length === 0 ){ return null}
+  if ( data.length === 0 ){ 
+    alert("No hay propiedades con los filtros aplicados"); 
+    return null
+  }
   return data;
 }
 
