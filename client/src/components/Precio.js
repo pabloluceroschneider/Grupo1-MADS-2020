@@ -22,7 +22,7 @@ export class Precio extends Component{
                         <div>
                             <h3>Precio:$ <span>{total}</span></h3>
                         </div>
-                        <div className="spaner">c/ alquiler+expensas</div>
+                <div className="spaner">c/ {precios[0]['descripcion']}.{precios[1]['descripcion']}</div>
                     </div>)}
             else if (incluye == 6){
                 return (
@@ -30,7 +30,7 @@ export class Precio extends Component{
                         <div>
                             <h3>Precio:$ <span>{total}</span></h3>
                         </div>
-                        <div className="spaner">c/ alquiler.expensas.impuestos</div>
+                <div className="spaner">c/ {precios[0]['descripcion']}.{precios[1]['descripcion']}.{precios[2]['descripcion']}</div>
                     </div>)
             }
 
