@@ -1,21 +1,35 @@
-import React, { Component, useState } from "react";
-import { Button, Header, Image, Modal } from "semantic-ui-react";
+import React, { Component } from "react";
+import GoogleMapReact from "google-map-react";
+import { Icon } from "semantic-ui-react";
 
-const ModalMapa = (props) => {
-  const { titulo, latitud, longitud} = props;
+// -> recordar: npm install --save google-map-react
 
-  return (
-    <Modal trigger={<Button>Ver Mapa</Button>}>
-      <Modal.Header>{titulo}</Modal.Header>
-      <Modal.Content> 
-            Aca va el Mapa
-      </Modal.Content>
-    </Modal>
-  );
-};
+const Marcador = () => (
+  <div>
+    <Icon size="huge" color="red" name="map marker" />
+  </div>
+);
 
-const Map = (props) => {
-    return (<ModalMapa titulo={props.title}></ModalMapa>);
-};
+class Map extends Component {
+  static defaultProps = {
+    zoom: 17,
+  };
 
-export default Map
+  render() {
+    const { latitud, longitud } = this.props;
+    return (
+      // Important! Always set the container height explicitly
+      <div style={{ height: "60vh", width: "100%" }}>
+        <GoogleMapReact
+          //   bootstrapURLKeys={{ key: /* YOUR KEY HERE */ }}
+          defaultCenter={{'lat':latitud, 'lng':longitud }}
+          defaultZoom={this.props.zoom}
+        >
+          <Marcador lat={latitud} lng={longitud} />
+        </GoogleMapReact>
+      </div>
+    );
+  }
+}
+
+export default Map;
