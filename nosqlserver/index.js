@@ -1,11 +1,14 @@
 const express = require('express');
-const app = express();
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 const routesV1 = require("./api/routes/v1");
 const PORT = process.env.PORT || 4000;
-
+const app = express();
 dotenv.config()
+
+app.use( bodyParser.urlencoded({ extended: false }));
+app.use( bodyParser.json())
 
 app.get('/', (req,res) => {
   res.send('Index')

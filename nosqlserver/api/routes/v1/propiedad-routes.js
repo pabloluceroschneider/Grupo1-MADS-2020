@@ -3,7 +3,7 @@ const propiedadCtrl = require('../../controllers/v1/propiedadCtrl');
 
 const router = express.Router();
 
-router.get('/', propiedadCtrl.get);
-router.post('/', propiedadCtrl.create);
+router.get('/propiedades', propiedadCtrl.get);
+router.post('/propiedades', propiedadCtrl.create);
 
 module.exports = router;
