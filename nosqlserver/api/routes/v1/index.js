@@ -1,5 +1,5 @@
-const propiedad = require("./propiedad-routes");
+const propiedadRoutes = require('./propiedad-routes');
 
-module.exports = app => {
-    app.use('/api/v1/propiedades', propiedad)
+module.exports = (app) => {
+    app.use('/api/v1/propiedades', propiedadRoutes);
 }

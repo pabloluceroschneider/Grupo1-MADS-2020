@@ -6,6 +6,11 @@ const routesV1 = require("./api/routes/v1");
 const PORT = process.env.PORT || 4000;
 
 dotenv.config()
+
+app.get('/', (req,res) => {
+  res.send('Index')
+})
+
 routesV1(app)
 
 mongoose.connect( process.env.MONGO , {

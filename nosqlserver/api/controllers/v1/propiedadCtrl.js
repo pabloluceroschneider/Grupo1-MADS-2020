@@ -1,5 +1,9 @@
-const create = (req,res) => {
-    res.send({status:"OK",msg:"Propiedades"})
+const get = (req,res) => {
+    res.status(200).send({msg:"Ok get"})
 };
 
-module.exports = { create };
+const create = (req,res) => {
+    res.status(200).send({msg:"Ok post"})
+};
+
+module.exports = { get, create };
