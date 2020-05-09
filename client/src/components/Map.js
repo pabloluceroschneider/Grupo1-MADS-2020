@@ -6,7 +6,7 @@ import { Icon } from "semantic-ui-react";
 
 const Marcador = () => (
   <div>
-    <Icon size="huge" color="red" name="map marker" />
+    <Icon size="huge" color="red" name="map marker alternate" />
   </div>
 );
 
