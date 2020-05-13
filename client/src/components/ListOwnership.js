@@ -74,7 +74,6 @@ export class ListOwnership extends Component {
 						/>
 					</div>
 				</div>
-				{console.log(filteredOwnship)}
 				{renderFilter ? <Filter filterState={this.state.filters} setFilterState={this.setState.bind(this)} /> : null}
 				{ filteredOwnship ? this.renderCards(filteredOwnship) : this.renderCards(ownship) }
 			</div>
