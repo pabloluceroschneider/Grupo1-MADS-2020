@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 import {Grid, Icon, Label} from 'semantic-ui-react'
 import {Amenities} from './Amenities'
 import {Precio} from './Precio'
+import ModalMap from './ModalMap';
 
 export class Content extends Component{
 
 
     render(){
-        const {dtp, id, loc, price, roomAp, own, amen} = this.props
+        const {dtp, id, loc, price, roomAp, own, amen, lat, long} = this.props
         function toDate(string){
             var string_date = string;
             var fecha = new Date(string_date);
@@ -44,6 +45,7 @@ export class Content extends Component{
                         </div>
                     </div>
                     <div className="columna2">
+                        <ModalMap title={'Apartamento ' + id} lat={lat} long={long}></ModalMap>
                         <Amenities amenities = {amen} />
                     </div>
                 </div>

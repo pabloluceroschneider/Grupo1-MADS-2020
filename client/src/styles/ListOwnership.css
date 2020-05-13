@@ -1,5 +1,3 @@
-
-
 .render.ListOwnerShip > .titleRow{
     display: grid;
     grid-template-areas: 'one two' 'three three';

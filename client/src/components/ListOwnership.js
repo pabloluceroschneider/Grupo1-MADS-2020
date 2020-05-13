@@ -59,6 +59,8 @@ export class ListOwnership extends Component {
                 price={prop.precios}
                 roomAp={prop.habitaciones}
                 image = {prop.imagenes}
+                lat={prop.lat}
+                long={prop.longitud}
               />
             </div>
           );

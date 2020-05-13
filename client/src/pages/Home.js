@@ -9,7 +9,7 @@ import { ListOwnership } from '../components/ListOwnership'
 export class Home extends Component {
     render(){
         return (
-            <div>
+            <div className="Home">
                <BarraMenu></BarraMenu>
                <Title>Co-Alquilando</Title>
                <PresentationList handlerPage={this.props.handlerPage}></PresentationList>

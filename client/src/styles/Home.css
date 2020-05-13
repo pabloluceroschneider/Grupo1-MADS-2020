@@ -39,11 +39,11 @@
     text-align-last: center;
   }
   
-  @media screen and (max-width: 992px) {
+  /* @media screen and (max-width: 992px) {
     .content {
       display: none;
     }
-  }
+  } */
   
   .CardPresentacionIzq {
     margin-bottom: 2%;
@@ -56,7 +56,7 @@
     width: 90%;
   }
   
-  .ui.card, .ui.cards>.card {
+  /* .ui.card, .ui.cards>.card {
     max-width: 100%;
     position: relative;
     display: flex;
@@ -72,7 +72,7 @@
     box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
     transition: box-shadow .1s ease,transform .1s ease;
     z-index: '';
-  }
+  } */
   
   .ui.secondary.pointing.menu {
     justify-content: center;
