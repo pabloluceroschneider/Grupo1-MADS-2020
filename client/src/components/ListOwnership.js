@@ -36,7 +36,7 @@ export class ListOwnership extends Component {
 		this.setState({ filteredOwnship: callback(ownship, filters) })
 	};
     
-    onClickFilter = () => {
+  onClickFilter = () => {
 		const { renderFilter } = this.state;
 		if (renderFilter){
 			this.filterPropiedades(filterPropiedades);
@@ -48,14 +48,18 @@ export class ListOwnership extends Component {
 		return data.map((prop) => {
 			return (
 				<div className="tarjetaProp" key={prop.id}>
-					<Ownership
-						dtp={prop.datePublished}
-						id={prop.id}
-						loc={prop.location}
-						own={prop.owner}
-						price={prop.price}
-						roomAp={prop.habitaciones}
-					/>
+          <Ownership
+            dtp={prop.fechaPublicacion}
+            id={prop.id}
+            loc={prop.ubicacion}
+            own={prop.usuario}
+            amen = {prop.amenities}
+            price={prop.precios}
+            roomAp={prop.habitaciones}
+            image = {prop.imagenes}
+            lat={prop.lat}
+            long={prop.longitud}
+          />
 				</div>
 			);
 		})

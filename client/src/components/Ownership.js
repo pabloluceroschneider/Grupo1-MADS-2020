@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import {Grid, Icon, Label} from 'semantic-ui-react'
+import {Grid, Icon} from 'semantic-ui-react'
+import {Content} from './Content'
 
 
 const imagenes = ["https://imgar.zonapropcdn.com/avisos/resize/1/00/45/59/55/84/1200x1200/1716688221.jpg",
@@ -11,7 +12,7 @@ const imagenes = ["https://imgar.zonapropcdn.com/avisos/resize/1/00/45/59/55/84/
 export class Ownership extends Component{
 
     render(){
-        const {dtp, id, loc, price, roomAp} = this.props
+        const {dtp, id, loc, price, roomAp, own, amen, image, lat, long} = this.props
         return(
                 // Componente Card tiene dos contenidos grandes. Content y extra content.
                 //Columna Imgen tiene la imagen. la imagen la traigo del array imagenes con su fuente
@@ -20,43 +21,34 @@ export class Ownership extends Component{
             <div className="ownership">
                
                 <div className="ui card ownership" >
-                  <div className="content">
-                    <Grid columns={2} divided>
-                        <Grid.Row>
-                            <Grid.Column className="columnaImagen" >
-                                <img className="image" src={imagenes[id-1]} alt={id}  />
-                            </Grid.Column>
-                            <Grid.Column className="columnaContenido">
-                                <div className="titulo">
-                                    <h1>Apartamento {id}</h1>
-                                    <div className="tag">
-                                        <Label as='a' color={id %2 === 0 ? 'red' : 'blue'} tag>
-                                            {id %2 === 0 ? 'Inmobiliaria' : 'Dueño'}
-                                        </Label>
-                                    </div>
-                                </div>
-                                <div className="descripcion">
-                                    <h3><Icon name="map marker alternate"/>{loc}</h3>
-                                    <h3>Ambientes: {roomAp}</h3>
-                                    
-                                </div>
-                                <div className="metadatos">
-                                    <div className="precio">
-                                        <h3>Precio: $ {price}</h3>
-                                    </div>
-                                </div>
-                                <div className="date">
-                                        <span>{dtp}</span>
-                                </div>
-                            </Grid.Column>
-                        </Grid.Row>
-                    </Grid>
-                  </div>
-                  <div className="extra content">
-                    <button className=" fluid positive ui button " style={{paddingRight:"2px"}}>Ver propiedad  
-                        <Icon style={{paddingLeft:"7px"}} color="black" name="home"/>
-                    </button>
-                  </div>
+                    <div className="complete">
+
+                      <div className="content">
+                            <div className="columnaImagen" >
+                                 <img className="image" src={image[0]} alt={id}  />
+                            </div>
+                            <hr></hr>
+                            <div className="columnaContenido">
+                                <Content 
+                                    id = {id}
+                                    loc = {loc}
+                                    roomAp = {roomAp}
+                                    price = {price}
+                                    dtp = {dtp}
+                                    own ={own['rol']}
+                                    amen = {amen}
+                                    lat={lat}
+                                    long={long}
+                                    />
+                                
+                            </div>
+                      </div>
+                      <div className="extra content">
+                        <button className=" fluid positive ui button " style={{paddingRight:"2px"}}>Ver propiedad  
+                            <Icon style={{paddingLeft:"7px"}} color="black" name="home"/>
+                        </button>
+                      </div>
+                    </div>
                 </div>
             </div>
             
