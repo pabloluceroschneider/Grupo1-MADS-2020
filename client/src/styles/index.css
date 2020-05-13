@@ -3,6 +3,7 @@
 @import './ListOwnership.css';
 @import './Ownership.css';
 @import './loader.css';
+@import './Home.css';
 
 body {
   margin: 0;

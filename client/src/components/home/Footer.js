@@ -9,19 +9,19 @@ export class Footer extends Component {
                 <div className="three wide column">
                   <h4 className="ui inverted header">About</h4>
                   <div className="ui inverted link list">
-                    <a href="#" className="item">Sitemap</a>
-                    <a href="#" className="item">Contact Us</a>
-                    <a href="#" className="item">Religious Ceremonies</a>
-                    <a href="#" className="item">Gazebo Plans</a>
+                    <div  className="item">Sitemap</div>
+                    <div  className="item">Contact Us</div>
+                    <div  className="item">Religious Ceremonies</div>
+                    <div className="item">Gazebo Plans</div>
                   </div>
                 </div>
                 <div className="three wide column">
                   <h4 className="ui inverted header">Services</h4>
                   <div className="ui inverted link list">
-                    <a href="#" className="item">Banana Pre-Order</a>
-                    <a href="#" className="item">DNA FAQ</a>
-                    <a href="#" className="item">How To Access</a>
-                    <a href="#" className="item">Favorite X-Men</a>
+                    <div className="item">Banana Pre-Order</div>
+                    <div className="item">DNA FAQ</div>
+                    <div className="item">How To Access</div>
+                    <div className="item">Favorite X-Men</div>
                   </div>
                 </div>
                 <div className="seven wide column">
