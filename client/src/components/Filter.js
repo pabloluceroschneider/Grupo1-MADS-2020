@@ -7,7 +7,6 @@ const InputRadio = props => {
 
   const toggleCheck = () => { 
     
-    console.log(filterState[id]);
     if (filterState[id] === value){
       setFilterState({ filters: {...filterState, [id]:null} })
     }else{
@@ -22,7 +21,6 @@ const InputRadio = props => {
         setFilterState({ filters: {...filterState, allAmenities: "1", wifi: "1", balcon: "1", ascensor: "1", cochera: "1", asador: "1", patio: "1" }})
       }
     }
-
   }
 
   return (
@@ -68,7 +66,7 @@ const PanelFiltros = props => {
       "filters":[
         { "label":"Dueño Directo", "id":"contrato", "value": "Propietario" },
         { "label":"Inmobiliaria", "id":"contrato", "value": "Inmobiliaria" },
-        { "label":"Dueño/Inmobiliaria", "id":"contrato", "value": "duenoinmobiliaria" }
+        { "label":"Dueño/Inmobiliaria", "id":"contrato", "value": null }
       ]
     },{
       "title": "Cantidad de habitaciones",
@@ -93,7 +91,6 @@ const PanelFiltros = props => {
 
   return (
     <>
-      {console.log(filterState)}
       <Form.Group inline>
         <div className="panelFilter">
           {filtros.map( (filter, index) => {
