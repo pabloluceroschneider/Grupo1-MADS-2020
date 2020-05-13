@@ -3,13 +3,13 @@ import { Button, Modal } from "semantic-ui-react";
 import Map from "./Map";
 
 const ModalMapa = (props) => {
-  const { titulo, latitud, longitud} = props;
+  const { titulo, lat, long} = props;
 
   return (
     <Modal trigger={<Button>Ver Mapa</Button>}>
       <Modal.Header>{titulo}</Modal.Header>
       <Modal.Content>
-        <Map latitud={latitud} longitud={longitud}></Map>
+        <Map lat={lat} long={long}></Map>
       </Modal.Content>
     </Modal>
   );
@@ -19,8 +19,8 @@ const Mapa = (props) => {
   return (
     <ModalMapa
       titulo={props.title}
-      latitud={props.lat}
-      longitud={props.lon}
+      lat={props.lat}
+      long={props.long}
     ></ModalMapa>
   );
 };

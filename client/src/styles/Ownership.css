@@ -170,7 +170,7 @@
     }
     .ownership > .ui.card.ownership:last-child {
         width: 90%;
-        height: 300px;
+        height: 350px;
     }
     .ownership > .ui.card.ownership:last-child > .complete {
         height: 100%;
@@ -257,7 +257,7 @@
     }
     .ownership > .ui.card.ownership:last-child {
         width: 90%;
-        height: 250px;
+        height: 300px;
     }
     .ownership > .ui.card.ownership:last-child > .complete {
         height: 100%;

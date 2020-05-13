@@ -16,16 +16,20 @@ class Map extends Component {
   };
 
   render() {
-    const { latitud, longitud } = this.props;
+    const { lat, long } = this.props;
+    let latInt = parseFloat(lat);
+    let longInt = parseFloat(long);
+    console.log(latInt);
+    
     return (
       // Important! Always set the container height explicitly
       <div style={{ height: "60vh", width: "100%" }}>
         <GoogleMapReact
           //   bootstrapURLKeys={{ key: /* YOUR KEY HERE */ }}
-          defaultCenter={{'lat':latitud, 'lng':longitud }}
+          defaultCenter={{'lat':latInt, 'lng':longInt }}
           defaultZoom={this.props.zoom}
         >
-          <Marcador lat={latitud} lng={longitud} />
+          <Marcador lat={latInt} lng={longInt} />
         </GoogleMapReact>
       </div>
     );
