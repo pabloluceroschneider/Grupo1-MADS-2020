@@ -4,6 +4,7 @@
 @import './Ownership.css';
 @import './loader.css';
 @import './Amenitie.css';
+@import './Home.css';
 
 body {
   margin: 0;
