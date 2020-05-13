@@ -4,11 +4,13 @@
 client/node_modules
 client/node_modules/.bin
 client/package-lock.json
+node_modules
 server/venv
 /.pnp
 .pnp.js
 __pycache__
-
+.env
+.env.example
 # testing
 /coverage
 

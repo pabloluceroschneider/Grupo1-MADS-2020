@@ -1,76 +1,91 @@
 import React, { Component } from "react";
 import { get } from "../util/api";
 import { Ownership } from "./Ownership";
-import { Button } from "semantic-ui-react";
-import Filter from "./Filter";
+import Filter, { ButtonFiltros, filterPropiedades } from "./Filter";
 import Loader from "../util/Loader";
 
 export class ListOwnership extends Component {
-  state = { ownship: null, renderFilter: false };
 
-  getPropiedades = async () => {
-    let data = await get("/propiedades");
-    this.setState({ ownship: data });
-  };
+	state = { 
+			ownship: null, 
+			renderFilter: false,
+			filters: {
+				"habitaciones": null,
+				"contrato": null,
+				"wifi": null,
+				"ascensor": null,
+				"cochera": null,
+				"asador": null,
+				"patio": null,
+				"allAmenities": null
+			},
+			filteredOwnship: null	
+		};
 
-  componentDidMount() {
-    this.getPropiedades();
-  }
+	componentDidMount() {
+		this.getPropiedades();
+	}
 
+	getPropiedades = async () => {
+		let data = await get("/propiedades");
+		this.setState({ ownship: data });
+	};
 
-  onClickFilterButton() {
-    const { renderFilter } = this.state;
-    this.setState({ renderFilter: !renderFilter });
-  }
+	filterPropiedades = callback => {
+		const { ownship, filters } = this.state;
+		this.setState({ filteredOwnship: callback(ownship, filters) })
+	};
+    
+  onClickFilter = () => {
+		const { renderFilter } = this.state;
+		if (renderFilter){
+			this.filterPropiedades(filterPropiedades);
+		}
+		this.setState({ renderFilter: !renderFilter });
+	};C
+	
+	renderCards = data => {
+		return data.map((prop) => {
+			return (
+				<div className="tarjetaProp" key={prop.id}>
+          <Ownership
+            dtp={prop.fechaPublicacion}
+            id={prop.id}
+            loc={prop.ubicacion}
+            own={prop.usuario}
+            amen = {prop.amenities}
+            price={prop.precios}
+            roomAp={prop.habitaciones}
+            image = {prop.imagenes}
+            lat={prop.lat}
+            long={prop.longitud}
+          />
+				</div>
+			);
+		})
+	}
 
-  filterBtn = () => {
-    return (
-      <Button
-        onClick={() => this.onClickFilterButton()}
-        positive={this.state.renderFilter}
-      >
-        {this.state.renderFilter ? "" : <i className="filter icon"></i>}
-        {this.state.renderFilter ? "Aplicar" : "Filtros"}
-      </Button>
-    );
-  };
+	renderOwnership = () => {
+		const { ownship, renderFilter, filteredOwnship } = this.state;
+		return (
+			<div className="render ListOwnerShip">
+				<div className="titleRow">
+					<h1 className="title">Listado de Propiedades</h1>
+					<div className="filterComponent">
+						<ButtonFiltros
+							onFilter={() => this.onClickFilter()}
+							renderFilter={this.state.renderFilter}
+						/>
+					</div>
+				</div>
+				{renderFilter ? <Filter filterState={this.state.filters} setFilterState={this.setState.bind(this)} /> : null}
+				{ filteredOwnship ? this.renderCards(filteredOwnship) : this.renderCards(ownship) }
+			</div>
+		);
+	};
 
-  renderOwnership = () => {
-    const { ownship, renderFilter } = this.state;
-    console.log(ownship)
-    return (
-      <div className="render ListOwnerShip">
-        <div className="titleRow">
-          <h1 className="title">Listado de Propiedades</h1>
-          <div className="filterComponent">{this.filterBtn()}</div>
-        </div>
-        {renderFilter ? <Filter /> : null}
-        {/* {this.state.ownship} */}
-        {ownship.map((prop) => {
-          console.log(prop);
-          return (
-            <div className="tarjetaProp" key={prop.id}>
-              <Ownership
-                dtp={prop.fechaPublicacion}
-                id={prop.id}
-                loc={prop.ubicacion}
-                own={prop.usuario}
-                amen = {prop.amenities}
-                price={prop.precios}
-                roomAp={prop.habitaciones}
-                image = {prop.imagenes}
-                lat={prop.lat}
-                long={prop.longitud}
-              />
-            </div>
-          );
-        })}
-      </div>
-    );
-  };
-
-  render() {
-    const { ownship } = this.state;
-    return ownship ? this.renderOwnership() : <Loader />;
-  }
+	render() {
+		const { ownship } = this.state;
+		return ownship ? this.renderOwnership() : <Loader />;
+	}
 }
