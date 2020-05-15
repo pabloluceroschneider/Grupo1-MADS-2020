@@ -13,6 +13,6 @@ Sprint 1:
  - Retrospective: https://docs.google.com/document/d/1-Ugzi4xp3ECG1epp1npRnNhaLNxYokMRoV36_x2AZSc/edit 
  
  Sprint 2: 
- - Retrospective: 
+ - Retrospective: https://docs.google.com/document/d/1FJ8kIbgxh5O8gA0H_jzq066yZ5uczBV3OQTH1zITjJM/edit
  
  Link de Deploy: https://agustinperalta.github.io/MADS-Deploy-Front/
