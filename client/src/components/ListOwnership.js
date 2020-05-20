@@ -30,16 +30,12 @@ export class ListOwnership extends Component {
 		let data = await get("/propiedades");
 		this.setState({ ownship: data });
 	};
-
-	filterPropiedades = callback => {
-		const { ownship, filters } = this.state;
-		this.setState({ filteredOwnship: callback(ownship, filters) })
-	};
-    
-  onClickFilter = () => {
-		const { renderFilter } = this.state;
+   
+  	onClickFilter = () => {
+		const { ownship, filters, renderFilter } = this.state;
 		if (renderFilter){
-			this.filterPropiedades(filterPropiedades);
+			let filteredOwnship = filterPropiedades(ownship, filters)
+			this.setState({ filteredOwnship });
 		}
 		this.setState({ renderFilter: !renderFilter });
 	};C

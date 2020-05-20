@@ -153,6 +153,7 @@ export const filterPropiedades = ( ownship, filters ) => {
     }
 
     if (flag){ return p }
+    return null
   })
   if ( data.length === 0 ){ 
     alert("No hay propiedades con los filtros aplicados"); 
