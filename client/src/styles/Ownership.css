@@ -9,8 +9,16 @@
     margin-bottom: 5px;
 }
 
+.columnaImagen > .image >.carousel-root > .carousel.carousel-slider {
+    height: 200px;
+}
+
+.thumbs-wrapper.axis-vertical{
+    display: none;
+}
+
 @supports(object-fit: cover){
-    .columnaImagen > .image{
+    .columnaImagen > .image >.carousel-root > .carousel.carousel-slider > .slider-wrapper.axis-horizontal > .slide.selected{
       height: 100%;
       width: 100%;
       object-fit: cover;

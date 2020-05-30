@@ -28,6 +28,7 @@ export class ListOwnership extends Component {
 
 	getPropiedades = async () => {
 		let data = await get("/propiedades");
+		console.log(data);
 		this.setState({ ownship: data });
 	};
    
