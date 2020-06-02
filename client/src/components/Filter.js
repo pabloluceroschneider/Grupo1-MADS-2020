@@ -71,9 +71,9 @@ const PanelFiltros = props => {
     },{
       "title": "Cantidad de habitaciones",
       "filters":[
-        { "label":"1","id":"habitaciones", "value":1 },
-        { "label":"2", "id":"habitaciones", "value":2 },
-        { "label":"3", "id":"habitaciones", "value":3 },
+        { "label":"1","id":"una_hab", "value":1 },
+        { "label":"2", "id":"dos_hab", "value":2 },
+        { "label":"3", "id":"tres_hab", "value":3 },
       ]
     },{
       "title": "Comodidades",
@@ -127,8 +127,8 @@ export const filterPropiedades = ( ownship, filters ) => {
   let data = [];
   data = ownship.filter( p => {
     let flag = true;
-    if (filters.habitaciones){ 
-      if ( p.habitaciones !== filters.habitaciones ){ flag = false }
+    if ( filters.una_hab || filters.dos_hab || filters.tres_hab  ){ 
+      if ( p.habitaciones !== filters.una_hab && p.habitaciones !== filters.dos_hab && p.habitaciones !== filters.tres_hab ){ flag = false }
     }
     if (filters.contrato){ 
       if ( p.usuario.descripcion !== filters.contrato ){ flag = false }
