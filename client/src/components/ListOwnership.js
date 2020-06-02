@@ -86,5 +86,6 @@ export class ListOwnership extends Component {
 	render() {
 		const { ownship } = this.state;
 		return ownship ? this.renderOwnership() : <Loader />;
+		
 	}
 }
