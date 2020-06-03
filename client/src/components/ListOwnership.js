@@ -10,7 +10,9 @@ export class ListOwnership extends Component {
 			ownship: null, 
 			renderFilter: false,
 			filters: {
-				"habitaciones": null,
+				"una_hab": null,
+				"dos_hab": null,
+				"tres_hab": null,
 				"contrato": null,
 				"wifi": null,
 				"ascensor": null,
@@ -64,6 +66,7 @@ export class ListOwnership extends Component {
 
 	renderOwnership = () => {
 		const { ownship, renderFilter, filteredOwnship } = this.state;
+		console.log(this.state.filters)
 		return (
 			<div className="render ListOwnerShip">
 				<div className="titleRow">
@@ -84,5 +87,6 @@ export class ListOwnership extends Component {
 	render() {
 		const { ownship } = this.state;
 		return ownship ? this.renderOwnership() : <Loader />;
+		
 	}
 }
