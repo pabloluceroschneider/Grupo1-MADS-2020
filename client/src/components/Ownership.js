@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Grid, Icon} from 'semantic-ui-react'
 import {Content} from './Content'
+import Carrousell from './Carrousell'
 
 
 const imagenes = ["https://imgar.zonapropcdn.com/avisos/resize/1/00/45/59/55/84/1200x1200/1716688221.jpg",
@@ -25,7 +26,7 @@ export class Ownership extends Component{
 
                       <div className="content">
                             <div className="columnaImagen" >
-                                 <img className="image" src={image[0]} alt={id}  />
+                                 <Carrousell images={image}/>
                             </div>
                             <hr></hr>
                             <div className="columnaContenido">
