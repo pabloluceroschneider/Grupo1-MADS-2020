@@ -71,7 +71,7 @@ const PanelFiltros = props => {
     },{
       "title": "Cantidad de habitaciones",
       "filters":[
-        { "label":"1","id":"una_hab", "value":1 },
+        { "label":"1","id":"una_hab", "value":1},
         { "label":"2", "id":"dos_hab", "value":2 },
         { "label":"3", "id":"tres_hab", "value":3 },
       ]
