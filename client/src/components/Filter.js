@@ -1,8 +1,8 @@
 import React from "react";
-import { Form, Button } from "semantic-ui-react";
+import { Form, Button, Checkbox } from "semantic-ui-react";
 // use Filter.css
 
-const InputRadio = props => {
+const InputCheck = props => {
   const {label, id, value, setFilterState, filterState } = props
 
   const toggleCheck = () => { 
@@ -25,7 +25,7 @@ const InputRadio = props => {
 
   return (
     <div>
-      <Form.Radio
+      <Checkbox
         label={label}
         checked={ filterState[id] === value }
         onClick={ () => toggleCheck() }
@@ -42,7 +42,7 @@ const Filtro = props => {
       {filter.filters.map( (f,index) => {
         return (
           <div key={index} className="filter">
-            <InputRadio 
+            <InputCheck
               label={f.label} 
               id={f.id} 
               value={f.value} 
