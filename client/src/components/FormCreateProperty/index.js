@@ -27,7 +27,7 @@ const FormProperty = () => {
             Balcon: null,
             Ascensor: null
         },
-        precio: null
+        precios: null
     })
 
 	useEffect(() => {
@@ -42,6 +42,14 @@ const FormProperty = () => {
         postJson.amenities.push( {descripcion: "Patio", valor: fields.amenities.Patio})
         postJson.amenities.push( {descripcion: "Balcon", valor: fields.amenities.Balcon})
         postJson.amenities.push( {descripcion: "Ascensor", valor: fields.amenities.Ascensor})
+
+		
+		postJson = {...postJson, precios:[]}
+        postJson.precios.push( {idPrecio: 1, descripcion: "Total", monto: fields.precios})
+		
+		console.log(postJson);
+		// postJson = {...fields, precios:[]}
+		// postJson.precios.push( fields.precios )
 
         let res = await post("/property", postJson)
         console.log(res);
