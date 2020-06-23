@@ -27,7 +27,8 @@ const FormProperty = () => {
             Balcon: null,
             Ascensor: null
         },
-        precios: null
+		precios: null,
+		images: []
     })
 
 	useEffect(() => {
@@ -46,13 +47,12 @@ const FormProperty = () => {
 		
 		postJson = {...postJson, precios:[]}
         postJson.precios.push( {idPrecio: 1, descripcion: "Total", monto: fields.precios})
-		
-		console.log(postJson);
-		// postJson = {...fields, precios:[]}
-		// postJson.precios.push( fields.precios )
+	
+		var input = document.querySelector('input[type="file"]')
+		postJson = {...postJson, images:[]}
+        postJson.images.push( input.files)
 
-        let res = await post("/property", postJson)
-        console.log(res);
+        await post("/property", postJson)
     }
 
 	return (
@@ -92,6 +92,10 @@ const FormProperty = () => {
 					/>
 					<Form.Input type="number" fluid label="Precio" placeholder="Precio" onChange={ event => setFields({...fields, precio: event.target.value})}  />
 				</Form.Group>
+
+				<Form.Field>
+					<input type="file" multiple />
+				</Form.Field>
 
                 <Button type='submit' onClick={onSubmitProperty}>Publicar</Button>
 	
