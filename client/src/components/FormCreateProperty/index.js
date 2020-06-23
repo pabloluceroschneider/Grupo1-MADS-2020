@@ -28,7 +28,7 @@ const FormProperty = () => {
             Ascensor: null
         },
 		precios: null,
-		images: []
+		images: null
     })
 
 	useEffect(() => {
@@ -49,8 +49,12 @@ const FormProperty = () => {
         postJson.precios.push( {idPrecio: 1, descripcion: "Total", monto: fields.precios})
 	
 		var input = document.querySelector('input[type="file"]')
-		postJson = {...postJson, images:[]}
-        postJson.images.push( input.files)
+		if ( input.files.length > 0){
+			postJson = {...postJson, images:[]}
+			postJson.images.push( input.files)
+		}
+		
+		console.log("postJson -->", postJson)
 
         await post("/property", postJson)
     }
