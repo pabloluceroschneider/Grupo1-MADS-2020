@@ -17,4 +17,16 @@ export const get = async (endpoint) => {
     })
 }
 
+export const post = async (endpoint, bodyRequest) => {
+    return new Promise(async (res, rej) => {
+        try{
+            let data = await api.post(endpoint, bodyRequest)
+            console.log(data)
+            res(data)
+        }catch(err){
+            rej(err)
+        }
+    })
+}
+
 export default api;

@@ -1,14 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Button, Checkbox, Form } from 'semantic-ui-react';
-
-// const fields = {
-// 	habitaciones: 1,
-// 	fechaPublicacion: new Date(),
-// 	lat: 1,
-// 	longitud: 1,
-// 	ubicacion: 1,
-// 	usuario: 'admin'
-// };
+import { Button, Form } from 'semantic-ui-react';
+import { post } from '../../util/api';
 
 const options = [
 	{ key: 'd', text: 'Dueño', value: 'dueño' },
@@ -28,8 +20,12 @@ const FormProperty = () => {
             rol: 1
         },
         amenities: {
-            asador: null,
-            cochera: null
+            Asador: null,
+            Cochera: null,
+            Wifi: null,
+            Patio: null,
+            Balcon: null,
+            Ascensor: null
         },
         precio: null
     })
@@ -38,8 +34,17 @@ const FormProperty = () => {
 		firstInput.current.focus();
     }, []);
     
-    const onSubmitProperty = () => {
-        console.log("fields -->", fields)
+    const onSubmitProperty = async () => {
+        let postJson = {...fields, amenities:[]}
+        postJson.amenities.push( {descripcion: "Asador", valor: fields.amenities.Asador})
+        postJson.amenities.push( {descripcion: "Cochera", valor: fields.amenities.Cochera})
+        postJson.amenities.push( {descripcion: "Wifi", valor: fields.amenities.Wifi})
+        postJson.amenities.push( {descripcion: "Patio", valor: fields.amenities.Patio})
+        postJson.amenities.push( {descripcion: "Balcon", valor: fields.amenities.Balcon})
+        postJson.amenities.push( {descripcion: "Ascensor", valor: fields.amenities.Ascensor})
+
+        let res = await post("/property", postJson)
+        console.log(res);
     }
 
 	return (
@@ -51,7 +56,7 @@ const FormProperty = () => {
 				</Form.Field>
 
 				<Form.Field>
-					<Form.Input type="number" fluid label="Habitaciones" placeholder="Habitaciones" onChange={ event => setFields({...fields, habitaciones: event.target.value})} />
+					<Form.Input type="number" fluid label="Habitaciones" placeholder="Habitaciones" onChange={ event => setFields({...fields, habitaciones: parseInt(event.target.value)})} />
 				</Form.Field>
 
 				<Form.Group widths="equal">
@@ -61,21 +66,21 @@ const FormProperty = () => {
 
 				<Form.Group grouped style={{ textAlign: 'left', marginLeft: '50px' }}>
 					<label>Comodidades</label>
-					<Form.Field label="Asador" control="input" type="checkbox" onChange={ () => setFields({...fields, amenities: {...fields.amenities, asador: !fields.amenities.asador} })} />
-					<Form.Field label="Cochera" control="input" type="checkbox" />
-					<Form.Field label="Wifi" control="input" type="checkbox" />
-					<Form.Field label="Patio" control="input" type="checkbox" />
-					<Form.Field label="Balcon" control="input" type="checkbox" />
-					<Form.Field label="Ascensor" control="input" type="checkbox" />
+					<Form.Field label="Asador" control="input" type="checkbox" onChange={ () => setFields({...fields, amenities: {...fields.amenities, Asador: !fields.amenities.Asador} })} />
+					<Form.Field label="Cochera" control="input" type="checkbox" onChange={ () => setFields({...fields, amenities: {...fields.amenities, Cochera: !fields.amenities.Cochera} })} />
+					<Form.Field label="Wifi" control="input" type="checkbox" onChange={ () => setFields({...fields, amenities: {...fields.amenities, Wifi: !fields.amenities.Wifi} })}/>
+					<Form.Field label="Patio" control="input" type="checkbox" onChange={ () => setFields({...fields, amenities: {...fields.amenities, Patio: !fields.amenities.Patio} })}/>
+					<Form.Field label="Balcon" control="input" type="checkbox" onChange={ () => setFields({...fields, amenities: {...fields.amenities, Balcon: !fields.amenities.Balcon} })}/>
+					<Form.Field label="Ascensor" control="input" type="checkbox" onChange={ () => setFields({...fields, amenities: {...fields.amenities, Ascensor: !fields.amenities.Ascensor} })}/>
 				</Form.Group>
 
 				<Form.Group widths="equal">
 					<Form.Select
-						fluid
+                        name="select"
 						label="Tipo de contrato"
 						options={options}
                         placeholder="Seleccione tipo de contrato..."
-                        // onChange={ event => setFields({...fields, usuario: {descripcion: value}})} 
+                        onChange={ (e, { name, value }) => setFields({...fields, usuario: {...fields.usuario, descripcion: value}})}
 					/>
 					<Form.Input type="number" fluid label="Precio" placeholder="Precio" onChange={ event => setFields({...fields, precio: event.target.value})}  />
 				</Form.Group>
