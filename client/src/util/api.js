@@ -1,8 +1,9 @@
 import axios from 'axios';
 
+let local = "http://localhost:8080"
+
 const api = axios.create({
-    // baseURL: `http://localhost:5000`
-    baseURL: `https://apicoalq.herokuapp.com`
+    baseURL: local
 })
 
 export const get = async (endpoint) => {

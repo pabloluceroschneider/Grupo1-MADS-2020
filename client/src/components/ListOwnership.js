@@ -10,16 +10,16 @@ export class ListOwnership extends Component {
 			ownship: null, 
 			renderFilter: false,
 			filters: {
-				"una_hab": null,
-				"dos_hab": null,
-				"tres_hab": null,
-				"contrato": null,
-				"wifi": null,
-				"ascensor": null,
-				"cochera": null,
-				"asador": null,
-				"patio": null,
-				"allAmenities": null
+				una_hab: null,
+				dos_hab: null,
+				tres_hab: null,
+				contrato: null,
+				wifi: null,
+				ascensor: null,
+				cochera: null,
+				asador: null,
+				patio: null,
+				allAmenities: null
 			},
 			filteredOwnship: null	
 		};
@@ -29,7 +29,7 @@ export class ListOwnership extends Component {
 	}
 
 	getPropiedades = async () => {
-		let data = await get("/propiedades");
+		let data = await get("/property/properties");
 		console.log(data);
 		this.setState({ ownship: data });
 	};
