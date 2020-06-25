@@ -1,0 +1,13 @@
+
+
+.form-property{
+    border: 1px solid #AFAFAF;
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+    padding: 20px;
+}
+
+.field{
+    text-align: left;
+}

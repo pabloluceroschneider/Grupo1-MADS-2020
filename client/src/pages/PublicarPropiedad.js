@@ -4,18 +4,21 @@ import { Title } from '../components/home/Title'
 import { PresentationList } from '../components/home/PresentationList'
 import { TabInformativo } from '../components/home/TabInformativo'
 import { Footer } from '../components/home/Footer'
-import { ListOwnership } from '../components/ListOwnership'
+import Formulario from '../components/FormCreateProperty'
 
-export class Home extends Component {
+export class PublicarPropiedad extends Component {
     render(){
         return (
-            <div className="Home">
+            <div className="PublicarPropiedad">
                <BarraMenu></BarraMenu>
                <Title>Co-Alquilando</Title>
                <PresentationList handlerPage={this.props.handlerPage}></PresentationList>
-               <ListOwnership />
+               <h1>
+                   PUBLICAR PROPIEDAD
+               </h1>
+               <Formulario />
                <h1 style={{marginTop: 0}}>¿Cómo Funciona?</h1>
-               <TabInformativo handlerPage={this.props.handlerPage}></TabInformativo>
+               <TabInformativo></TabInformativo>
                <br></br>
                <br></br>
                <br></br>

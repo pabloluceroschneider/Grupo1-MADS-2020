@@ -5,6 +5,7 @@
 @import './loader.css';
 @import './Amenitie.css';
 @import './Home.css';
+@import './form-property.css';
 
 body {
   margin: 0;

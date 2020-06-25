@@ -5,7 +5,6 @@ export class CardPresentacion extends Component {
   static propTypes = {
     title: PropTypes.string,
     imagen: PropTypes.string,
-    // pagina: PropTypes.string,
   };
 
   render() {
@@ -16,7 +15,7 @@ export class CardPresentacion extends Component {
           <img
             src={imagen}
             alt={title}
-            // onClick={() => handlerPage(pagina)}
+            onClick={() => this.props.handlerPage(this.props.pagina)}
           ></img>
           <div className="textoImagen">{title}</div>
         </div>
