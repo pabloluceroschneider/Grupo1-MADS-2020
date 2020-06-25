@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Button, Form } from 'semantic-ui-react';
 import { post } from '../../util/api';
+import firebase from '../../util/firebase';
 
 const options = [
 	{ key: 'd', text: 'Dueño', value: 'dueño' },
@@ -33,7 +34,19 @@ const FormProperty = () => {
 
 	useEffect(() => {
 		firstInput.current.focus();
-    }, []);
+	}, []);
+	
+	const saveImages = async files => {
+		let bucketName = "images"
+		let file = files[0];
+		let storageRef = firebase.storage().ref(`${bucketName}/${file.name}`)
+		let uploadTask = storageRef.put(file)
+		uploadTask.on(
+			firebase.storage.TaskEvent.STATE_CHANGED, 
+			() => {
+				let downloadURL = uploadTask.snapshot.downloadURL
+			})
+	}
     
     const onSubmitProperty = async () => {
         let postJson = {...fields, amenities:[]}
@@ -48,12 +61,11 @@ const FormProperty = () => {
 		postJson = {...postJson, precios:[]}
         postJson.precios.push( {idPrecio: 1, descripcion: "Total", monto: fields.precios})
 	
-		var input = document.querySelector('input[type="file"]')
-		if ( input.files.length > 0){
-			postJson = {...postJson, images:[]}
-			postJson.images.push( input.files)
-		}
+		await saveImages(postJson.images)
 		
+		let name = postJson.images[0].name
+		postJson = { ...postJson, images: [name] }
+
 		console.log("postJson -->", postJson)
 
         await post("/property", postJson)
@@ -98,7 +110,7 @@ const FormProperty = () => {
 				</Form.Group>
 
 				<Form.Field>
-					<input type="file" multiple />
+					<input type="file" multiple onChange={ e => setFields( { ...fields, images: e.target.files })  } />
 				</Form.Field>
 
                 <Button type='submit' onClick={onSubmitProperty}>Publicar</Button>
