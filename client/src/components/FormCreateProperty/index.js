@@ -46,6 +46,7 @@ const FormProperty = () => {
 			let uploadTask = storageRef.put(file);
 			uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, () => {
 				let downloadURL = uploadTask.snapshot.downloadURL;
+				return downloadURL;
 			});
 		});
 	};

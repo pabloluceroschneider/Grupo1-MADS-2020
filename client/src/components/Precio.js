@@ -10,13 +10,13 @@ export class Precio extends Component{
         function tomarPrecio(precios) {
             let total = 0;
             let incluye = 0;
-            precios.map(pre => {
+            precios.forEach(pre => {
                 if(pre['monto']>0){
                     total += pre['monto'];
                     incluye += pre['idPrecio']
                 }
             })
-            if (incluye == 3){
+            if (incluye === 3){
                 return (
                     <div className="container-precio">
                         <div>
@@ -24,7 +24,7 @@ export class Precio extends Component{
                         </div>
                 <div className="spaner">c/ {precios[0]['descripcion']}.{precios[1]['descripcion']}</div>
                     </div>)}
-            else if (incluye == 6){
+            else if (incluye === 6){
                 return (
                     <div className="container-precio">
                         <div>

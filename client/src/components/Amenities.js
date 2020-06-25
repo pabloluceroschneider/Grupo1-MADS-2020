@@ -12,6 +12,7 @@ export class Amenities extends Component {
               <div key={amenitie.descripcion}>. {amenitie["descripcion"]}</div>
             );
           }
+          return null
         })}
       </div>
     );

@@ -1,16 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import firebase, { storage } from "firebase";
-
-const imagenes = [
-    "https://imgar.zonapropcdn.com/avisos/resize/1/00/45/59/55/84/1200x1200/1716688221.jpg",
-    "https://imgar.zonapropcdn.com/avisos/resize/1/00/44/97/17/01/1200x1200/1704286302.jpg",
-    "https://imgar.zonapropcdn.com/avisos/resize/1/00/44/90/38/04/1200x1200/1700036482.jpg",
-    "https://imgar.zonapropcdn.com/avisos/resize/1/00/45/83/95/69/1200x1200/1719623196.jpg",
-    "https://imgar.zonapropcdn.com/avisos/resize/1/00/45/82/90/81/1200x1200/1719325461.jpg",
-    "https://imgar.zonapropcdn.com/avisos/resize/1/00/45/61/77/65/1200x1200/1714820015.jpg",
-  ];
+import firebase from "firebase";
 
 const Carrousell = (props) => {
   const { images } = props;
@@ -20,7 +11,6 @@ const Carrousell = (props) => {
     if (images) {
       images.map(async (img) => {
         let storageRef = firebase.storage().ref();
-        let spaceRef = storageRef.child("images/" + img);
         let url = await storageRef
           .child("images/" + img)
           .getDownloadURL()
@@ -30,7 +20,7 @@ const Carrousell = (props) => {
         setPhotos(photos => [...photos, url]);
       });
     }
-  }, []);
+  }, [images]);
 
 
   return (

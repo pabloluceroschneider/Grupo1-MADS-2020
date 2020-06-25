@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Icon, Label } from "semantic-ui-react";
+import { Icon, Label } from "semantic-ui-react";
 import { Amenities } from "./Amenities";
 import { Precio } from "./Precio";
 import ModalMap from "./ModalMap";
