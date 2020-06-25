@@ -98,14 +98,15 @@ const FormProperty = () => {
 			...postJson,
 			usuario: {
 				descripcion: fields.usuario.descripcion,
-				rol: fields.usuario.descripcion === 'Dueño' ? 1 : 2
+				rol: fields.usuario.descripcion === 'dueño' ? 1 : 2
 			}
 		};
 
 		console.log('postJson -->', postJson);
 
-    await post('/property', postJson);
-    document.location.reload();
+	await post('/property', postJson);
+	setLoad(false);	
+    // document.location.reload();
 	};
 
 	return (

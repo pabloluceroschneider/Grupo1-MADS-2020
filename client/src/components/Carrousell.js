@@ -15,7 +15,6 @@ const imagenes = [
 const Carrousell = (props) => {
   const { images } = props;
   const [photos, setPhotos] = useState([]);
-  console.log("images -->", images);
 
   useEffect(() => {
     if (images) {
@@ -26,7 +25,6 @@ const Carrousell = (props) => {
           .child("images/" + img)
           .getDownloadURL()
           .then((url) => {
-            console.log("url -->", typeof url );
             return url;
           });
         setPhotos(photos => [...photos, url]);
@@ -34,11 +32,6 @@ const Carrousell = (props) => {
     }
   }, []);
 
-  useEffect(() => {
-    console.log("photos -->", photos);
-  });
-
-  console.log('photos:', photos);
 
   return (
     <div className="image">

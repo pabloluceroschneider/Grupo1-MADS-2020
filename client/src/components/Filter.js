@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Button } from "semantic-ui-react";
+import { Form, Button, Checkbox } from "semantic-ui-react";
 // use Filter.css
 
 const InputRadio = props => {
@@ -25,7 +25,7 @@ const InputRadio = props => {
 
   return (
     <div>
-      <Form.Radio
+      <Checkbox
         label={label}
         checked={ filterState[id] === value }
         onClick={ () => toggleCheck() }
@@ -64,8 +64,8 @@ const PanelFiltros = props => {
     {
       "title": "Tipo de Contrato",
       "filters":[
-        { "label":"Dueño Directo", "id":"contrato", "value": "Propietario" },
-        { "label":"Inmobiliaria", "id":"contrato", "value": "Inmobiliaria" },
+        { "label":"Dueño Directo", "id":"contrato", "value": 1 },
+        { "label":"Inmobiliaria", "id":"contrato", "value": 2 },
         { "label":"Dueño/Inmobiliaria", "id":"contrato", "value": null }
       ]
     },{
@@ -131,25 +131,25 @@ export const filterPropiedades = ( ownship, filters ) => {
       if ( p.habitaciones !== filters.una_hab && p.habitaciones !== filters.dos_hab && p.habitaciones !== filters.tres_hab ){ flag = false }
     }
     if (filters.contrato){ 
-      if ( p.usuario.descripcion !== filters.contrato ){ flag = false }
+      if ( p.usuario.rol !== filters.contrato ){ flag = false }
     }
     if (filters.asador){
-      if ( p.amenities[0].valor !== filters.asador ){ flag = false }
+      if ( !p.amenities[0].valor ){ flag = false }
     }
     if (filters.cochera){
-      if ( p.amenities[1].valor !== filters.cochera ){ flag = false }
+      if ( !p.amenities[1].valor){ flag = false }
     }
     if (filters.wifi){
-      if ( p.amenities[2].valor !== filters.wifi ){ flag = false }
+      if ( !p.amenities[2].valor ){ flag = false }
     }
     if (filters.patio){
-      if ( p.amenities[3].valor !== filters.patio ){ flag = false }
+      if ( !p.amenities[3].valor){ flag = false }
     }
     if (filters.balcon){
-      if ( p.amenities[4].valor !== filters.balcon ){ flag = false }
+      if ( !p.amenities[4].valor  ){ flag = false }
     }
     if (filters.ascensor){
-      if ( p.amenities[5].valor !== filters.ascensor ){ flag = false }
+      if ( !p.amenities[5].valor  ){ flag = false }
     }
 
     if (flag){ return p }

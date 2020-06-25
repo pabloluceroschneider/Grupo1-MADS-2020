@@ -30,7 +30,6 @@ export class ListOwnership extends Component {
 
   getPropiedades = async () => {
     let data = await get("/property/properties");
-    console.log(data);
     this.setState({ ownship: data });
   };
 
@@ -66,7 +65,6 @@ export class ListOwnership extends Component {
 
   renderOwnership = () => {
     const { ownship, renderFilter, filteredOwnship } = this.state;
-    console.log(this.state.filters);
     return (
       <div className="render ListOwnerShip">
         <div className="titleRow">

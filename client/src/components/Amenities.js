@@ -3,7 +3,6 @@ import React, { Component } from "react";
 export class Amenities extends Component {
   render() {
     const { amenities } = this.props;
-    console.log('Amenities =>', amenities);
     
     return (
       <div className="container-amenitie">

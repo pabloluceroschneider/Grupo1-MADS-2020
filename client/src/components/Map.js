@@ -19,7 +19,6 @@ class Map extends Component {
     const { lat, long } = this.props;
     let latInt = parseFloat(lat);
     let longInt = parseFloat(long);
-    console.log(latInt);
     
     return (
       // Important! Always set the container height explicitly
