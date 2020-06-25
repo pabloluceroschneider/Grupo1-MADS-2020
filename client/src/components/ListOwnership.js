@@ -42,7 +42,6 @@ export class ListOwnership extends Component {
     }
     this.setState({ renderFilter: !renderFilter });
   };
-  C;
   
   renderCards = (data) => {
     return data.map((prop) => {

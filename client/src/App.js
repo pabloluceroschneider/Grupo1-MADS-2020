@@ -6,7 +6,7 @@ import { PublicarPropiedad } from './pages/PublicarPropiedad';
 document.title = "Co-alquilando"
 
 class App extends Component {
-  state = { page: 'test' }
+  state = { page: 'ListaPropiedades' }
 
   handlerPage = (e) => {
     this.setState({page: e})
