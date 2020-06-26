@@ -17,11 +17,15 @@ Sprint 2: https://docs.google.com/document/d/1FJ8kIbgxh5O8gA0H_jzq066yZ5uczBV3OQ
 
 Sprint 3: https://docs.google.com/document/d/1Pf1AyoPeFOekZ3_8Fon2R52yOQEoctT9uLRCHslAsl8/edit
 
+## Release Retrospective
+
+- https://docs.google.com/document/d/19yhYQZzjD_tt2vnE0Et48Vpc4ugaTYo5jJhWGPY3atM/edit?usp=sharing
+
 ## Plan de Release
 Release 1: https://docs.google.com/document/d/1yiQS15ktB0XRxgdFVvoO7Tb4fo3d9Yvj9DO3MMp_qp4/edit
 
 Release 2: https://docs.google.com/document/d/1dmulYcpXqTluN1ETcWuRIb5PoqkeelBFTB_8mvm31pw/edit
  
-### Link de Deploy:
+### Links de Deploy:
  - https://agustinperalta.github.io/MADS-Deploy-Front/
  - http://ec2-54-90-37-192.compute-1.amazonaws.com:8080
