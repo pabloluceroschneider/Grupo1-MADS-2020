@@ -23,4 +23,4 @@ Release 1: https://docs.google.com/document/d/1yiQS15ktB0XRxgdFVvoO7Tb4fo3d9Yvj9
 Release 2: https://docs.google.com/document/d/1dmulYcpXqTluN1ETcWuRIb5PoqkeelBFTB_8mvm31pw/edit
  
 ### Link de Deploy:
-https://agustinperalta.github.io/MADS-Deploy-Front/
+ - https://agustinperalta.github.io/MADS-Deploy-Front/
