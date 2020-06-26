@@ -1,4 +1,3 @@
-
 # Grupo 01 - MADS - 2020
 
 En este repositorio llevaremos adelante el proyecto integrador de la materia Metodologías Ágiles de Desarrollo de Software.
@@ -15,6 +14,8 @@ Aca realizamos los documentos de las planning. En cada hoja del excel esta la pl
 Sprint 1: https://docs.google.com/document/d/1-Ugzi4xp3ECG1epp1npRnNhaLNxYokMRoV36_x2AZSc/edit 
 
 Sprint 2: https://docs.google.com/document/d/1FJ8kIbgxh5O8gA0H_jzq066yZ5uczBV3OQTH1zITjJM/edit
+
+Sprint 3: https://docs.google.com/document/d/1Pf1AyoPeFOekZ3_8Fon2R52yOQEoctT9uLRCHslAsl8/edit
  
 ### Link de Deploy:
 https://agustinperalta.github.io/MADS-Deploy-Front/
