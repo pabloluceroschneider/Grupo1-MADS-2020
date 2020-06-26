@@ -16,6 +16,11 @@ Sprint 1: https://docs.google.com/document/d/1-Ugzi4xp3ECG1epp1npRnNhaLNxYokMRoV
 Sprint 2: https://docs.google.com/document/d/1FJ8kIbgxh5O8gA0H_jzq066yZ5uczBV3OQTH1zITjJM/edit
 
 Sprint 3: https://docs.google.com/document/d/1Pf1AyoPeFOekZ3_8Fon2R52yOQEoctT9uLRCHslAsl8/edit
+
+## Plan de Release
+Release 1: https://docs.google.com/document/d/1yiQS15ktB0XRxgdFVvoO7Tb4fo3d9Yvj9DO3MMp_qp4/edit
+
+Release 2: https://docs.google.com/document/d/1dmulYcpXqTluN1ETcWuRIb5PoqkeelBFTB_8mvm31pw/edit
  
 ### Link de Deploy:
 https://agustinperalta.github.io/MADS-Deploy-Front/
